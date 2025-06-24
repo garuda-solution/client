@@ -1,0 +1,96 @@
+.header {
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    position: static;
+    width: 100%;
+    /* top: 20px; */
+    background: none;
+    z-index: 1000;
+    height: 140px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem 8rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #003366;
+}
+
+nav {
+    padding: 10px 25px;
+    border-radius: 80px;
+    background: linear-gradient(90deg, #0D0E12 0%, #00202A 100%);
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #0066cc;
+}
+
+.clockContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.rightHeaderContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.currency {
+    display: flex;
+    gap: 4px;
+    font-size: 0.9rem;
+    color: #555;
+    flex-direction: column;
+}
+
+.currencyItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.flag {
+    width: 16px;
+    height: 12px;
+}
+
+.currency span {
+    color: #fff;
+    font-family: PT Root UI;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 115.99999999999999%;
+    letter-spacing: 0;
+}
+
+.time {
+    font-family: PT Root UI;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: right;
+    color: #fff;
+}

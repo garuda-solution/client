@@ -1,0 +1,381 @@
+.container {
+    padding-top: 80px;
+}
+
+/* Герой секция */
+.hero {
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.heroContent {
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.primaryButton,
+.secondaryButton {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 45px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.primaryButton {
+    background-color: #617F96;
+    color: white;
+}
+
+.secondaryButton {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.primaryButton:hover {
+    background-color: #0052a3;
+}
+
+.secondaryButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* О компании с полукругом */
+.about {
+    position: relative;
+    max-width: 1180px;
+    margin: 4rem auto;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fff;
+    background: #18191E;
+    padding: 80px 210px 45px;
+    border-radius: 10px;
+}
+
+.aboutCircle {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: #E0DCD9;
+    border-radius: 50%;
+}
+
+.about p {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+/* Компетенции */
+.competencies {
+    background-color: #f9f9f9;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.competencies h2 {
+    margin-bottom: 3rem;
+    color: #003366;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #0066cc;
+    margin-bottom: 1rem;
+}
+
+.moreButton {
+    background-color: transparent;
+    border: 1px solid #0066cc;
+    color: #0066cc;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.moreButton:hover {
+    background-color: #0066cc;
+    color: white;
+}
+
+/* Для партнеров */
+.partnersSection {
+    background-color: #0a0c10;
+    padding: 4rem 2rem;
+    color: white;
+    text-align: center;
+}
+
+.partnersSection h2 {
+    margin-bottom: 3rem;
+}
+
+.partnersContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.partnersGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.partnerCard {
+    background: #18191E;
+    padding: 2rem;
+    border: 1px solid;
+    /* border-image-source: linear-gradient(129.44deg, #E0DCD9 4%, #9A8479 96%); */
+    border-image-slice: 1;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    width: 100%;
+    text-align: left;
+    position: relative;
+}
+
+.partnerCard:hover {
+    transform: translateY(-5px);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.cardHeader h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    max-width: 80%;
+}
+
+.cardNumber {
+    font-size: 1.2rem;
+    color: #E0DCD9;
+    opacity: 0.7;
+}
+
+.contactButton {
+    position: absolute;
+    right: 0;
+    bottom: -60px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 0.8rem 2rem;
+    border-radius: 45px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.contactButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Нам доверяют */
+.trustSection {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.trustSection h2 {
+    margin-bottom: 3rem;
+    color: #003366;
+}
+
+.trustLogos {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trustLogo {
+    width: 150px;
+    height: 80px;
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+/* Новости */
+.newsSection {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.newsSection h2 {
+    margin-bottom: 3rem;
+    color: #fff;
+    font-size: 52px;
+    font-weight: 600;
+}
+
+.newsContainer {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    scrollbar-width: none;
+}
+
+.newsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.newsCard {
+    min-width: 300px;
+    height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.newsCard:hover {
+    transform: translateY(-5px);
+}
+
+.newsImage {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.newsContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsContent p {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: start;
+    margin: 0;
+}
+
+.readButton {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    align-self: flex-start;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .about {
+        padding: 60px 1rem 45px;
+    }
+
+    .about p {
+        font-size: 1.1rem;
+    }
+
+    .partnersGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .contactButton {
+        position: static;
+        margin-top: 2rem;
+    }
+
+    .newsCard {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aboutCircle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

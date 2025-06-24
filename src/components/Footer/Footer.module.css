@@ -1,0 +1,118 @@
+.footer {
+    background-color: #003366;
+    color: white;
+    padding: 3rem 0 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 41px;
+    border-radius: 16px;
+    background: #18191E;
+}
+
+.contactInfo h3 {
+    font-size: 56px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.contactInfo p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.contactForm {
+    background: #617F96;
+    width: 539px;
+    height: 501px;
+    border-radius: 10px;
+    border-width: 2px;
+    padding: 32px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactForm h3 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.contactForm form {
+    display: grid;
+    gap: 1rem;
+    width: 80%;
+}
+
+.contactForm input {
+    padding: 0.8rem;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #fff;
+    color: #89A8C0;
+    font-size: 1rem;
+}
+
+.contactForm input::placeholder {
+    color: #89A8C0;
+}
+
+.contactForm button {
+    background-color: #fff;
+    color: #617F96;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contactForm button:hover {
+    background-color: #0052a3;
+}
+
+.privacy {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+    text-align: center;
+    width: 65%;
+}
+
+.bottom {
+    background-color: #002244;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+.copyright {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    opacity: 0.8;
+}
+
+.footerNav {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 1rem auto 0;
+    padding: 0 2rem;
+}
+
+.footerNav a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.footerNav a:hover {
+    opacity: 0.8;
+}

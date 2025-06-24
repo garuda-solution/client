@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(#0a0c10, #335673);
+}
+
+main {
+  min-height: calc(100vh - 400px); /* Adjust based on your footer height */
+}
+
+#root {
+  background: linear-gradient(#0a0c10, #335673);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
