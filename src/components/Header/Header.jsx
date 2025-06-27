@@ -1,16 +1,21 @@
 import styles from "./Header.module.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 import usdFlag from "../../assets/usd-flag.svg";
 import eurFlag from "../../assets/eur-flag.svg";
 import cnyFlag from "../../assets/cny-flag.svg";
 import clock from "../../assets/clock.svg";
+import { Link } from "react-router-dom";
+import GlobeWidget from "../GlobeWidget/GlobeWidget";
 
 const Header = () => {
   const [rates, setRates] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isMobile = useMediaQuery({ maxWidth: 1024 });
 
   useEffect(() => {
     const updateMoscowTime = () => {
@@ -36,7 +41,6 @@ const Header = () => {
           CNY: data.Valute.CNY.Value,
         };
 
-        console.log(ratesData);
         setRates(ratesData);
       } catch (error) {
         console.error("Error fetching currency rates:", error);
@@ -54,52 +58,156 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMenuOpen]);
+
   const formatRate = (value) => {
     return value ? value.toFixed(2).replace(".", ",") : "00,00";
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className={styles.header}>
-      <div className={styles.container}>
-        <div className={styles.logo}>Гаруда Солюшн</div>
-        <nav className={styles.nav}>
-          <ul>
-            <li>
-              <a href="/">О компании</a>
-            </li>
-            <li>
-              <a href="/about">Деятельность</a>
-            </li>
-            <li>
-              <a href="/partners">Сотрудничество</a>
-            </li>
-            <li>
-              <a href="/contacts">Контакты</a>
-            </li>
-          </ul>
-        </nav>
-        <div className={styles.rightHeaderContainer}>
-          <div className={styles.clockContainer}>
-            <img src={clock} alt="clock" className={styles.clock} />
-            <span className={styles.time}>{currentTime}</span>
-          </div>
-          <div className={styles.currency}>
-            <div className={styles.currencyItem}>
-              <img src={usdFlag} alt="USD" className={styles.flag} />
-              <span>USD / RUB {loading ? "00,00" : formatRate(rates.USD)}</span>
-            </div>
-            <div className={styles.currencyItem}>
-              <img src={eurFlag} alt="EUR" className={styles.flag} />
-              <span>EUR / RUB {loading ? "00,00" : formatRate(rates.EUR)}</span>
-            </div>
-            <div className={styles.currencyItem}>
-              <img src={cnyFlag} alt="CNY" className={styles.flag} />
-              <span>CNY / RUB {loading ? "00,00" : formatRate(rates.CNY)}</span>
+    <>
+      <header className={styles.header}>
+        <div className={styles.container}>
+          <Link className={styles.logo} to="/">
+            <img src="/logo.svg" alt="Garuda Solution" className={styles.logoImage} />
+          </Link>
+
+          {!isMobile ? (
+            <>
+              <nav className={styles.nav}>
+                <ul>
+                  <li>
+                    <a href="/">О компании</a>
+                  </li>
+                  <li>
+                    <a href="/about">Деятельность</a>
+                  </li>
+                  <li>
+                    <a href="/partners">Сотрудничество</a>
+                  </li>
+                  <li>
+                    <a href="/contacts">Контакты</a>
+                  </li>
+                </ul>
+              </nav>
+              <div className={styles.rightHeaderContainer}>
+                <div className={styles.clockContainer}>
+                  {/* <img src={clock} alt="clock" className={styles.clock} /> */}
+                  <GlobeWidget time={currentTime} />
+                  <span className={styles.time}>{currentTime}</span>
+                </div>
+                <div className={styles.currency}>
+                  <div className={styles.currencyItem}>
+                    <img src={usdFlag} alt="USD" className={styles.flag} />
+                    <span>
+                      USD / RUB {loading ? "00,00" : formatRate(rates?.USD)}
+                    </span>
+                  </div>
+                  <div className={styles.currencyItem}>
+                    <img src={eurFlag} alt="EUR" className={styles.flag} />
+                    <span>
+                      EUR / RUB {loading ? "00,00" : formatRate(rates?.EUR)}
+                    </span>
+                  </div>
+                  <div className={styles.currencyItem}>
+                    <img src={cnyFlag} alt="CNY" className={styles.flag} />
+                    <span>
+                      CNY / RUB {loading ? "00,00" : formatRate(rates?.CNY)}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </>
+          ) : (
+            <button
+              className={`${styles.burgerButton} ${
+                isMenuOpen ? styles.open : ""
+              }`}
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              <span className={styles.burgerLine}></span>
+              <span className={styles.burgerLine}></span>
+            </button>
+          )}
+        </div>
+      </header>
+
+      {/* Мобильное меню */}
+      {isMobile && (
+        <div
+          className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ""}`}
+          onClick={toggleMenu}
+        >
+          <div
+            className={styles.mobileMenuContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <nav className={styles.mobileNav}>
+              <ul>
+                <li>
+                  <a href="/" onClick={toggleMenu}>
+                    О компании
+                  </a>
+                </li>
+                <li>
+                  <a href="/about" onClick={toggleMenu}>
+                    Деятельность
+                  </a>
+                </li>
+                <li>
+                  <a href="/partners" onClick={toggleMenu}>
+                    Сотрудничество
+                  </a>
+                </li>
+                <li>
+                  <a href="/contacts" onClick={toggleMenu}>
+                    Контакты
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div className={styles.mobileInfo}>
+              <div className={styles.mobileClock}>
+                {/* <img src={clock} alt="clock" /> */}
+                <GlobeWidget time={currentTime} />
+                <span>{currentTime}</span>
+              </div>
+              <div className={styles.mobileCurrency}>
+                <div className={styles.currencyItem}>
+                  <img src={usdFlag} alt="USD" />
+                  <span>
+                    USD / RUB {loading ? "00,00" : formatRate(rates?.USD)}
+                  </span>
+                </div>
+                <div className={styles.currencyItem}>
+                  <img src={eurFlag} alt="EUR" />
+                  <span>
+                    EUR / RUB {loading ? "00,00" : formatRate(rates?.EUR)}
+                  </span>
+                </div>
+                <div className={styles.currencyItem}>
+                  <img src={cnyFlag} alt="CNY" />
+                  <span>
+                    CNY / RUB {loading ? "00,00" : formatRate(rates?.CNY)}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      )}
+    </>
   );
 };
 
