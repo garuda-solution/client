@@ -50,8 +50,8 @@ const GlobeWidget = () => {
         pointRadius={3.5}
         pointAltitude={0}
         pointResolution={16}
-        width={60}
-        height={60}
+        width={45}
+        height={45}
         onGlobeReady={() => {
           if (globeEl.current && location) {
             globeEl.current.pointOfView(

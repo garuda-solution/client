@@ -1,0 +1,206 @@
+.container {
+    padding: 0 8rem 4rem;
+    color: white;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+/* Page Header */
+.pageHeader {
+    padding: 80px 0 340px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.companyName {
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 96px;
+    font-weight: 600;
+    line-height: 106%;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.pageTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+    padding: 2px 37px;
+    border: 1px solid #1F3649;
+    border-radius: 7px;
+    display: inline-block;
+}
+
+/* Company Section */
+.companySection {
+    margin-bottom: 340px;
+}
+
+.sectionTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 52px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.companyDescription {
+    font-size: 24px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0;
+}
+
+/* Common Text Sections */
+.textSection {
+    margin-bottom: 80px;
+}
+
+.sectionParagraph {
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 900px;
+}
+
+/* Photo Grid Section */
+.photoGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 80px;
+}
+
+.photoContainer {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    max-width: 580px;
+}
+
+.photo {
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    opacity: 0.2;
+}
+
+.specialPhoto {
+    background-color: #18191E;
+    display: flex;
+}
+
+.specialContent {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.iconContainer {
+    width: 60px;
+    height: 60px;
+    background-color: #2A2B30;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.specialText {
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1440px) {
+    .container {
+        padding: 0 4rem 3rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .companyName {
+        font-size: 52px;
+    }
+
+    .sectionTitle {
+        font-size: 42px;
+    }
+
+    .companyDescription,
+    .sectionParagraph {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .photoGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .photoContainer {
+        height: 250px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 2rem 2rem;
+    }
+
+    .companyName {
+        font-size: 42px;
+    }
+
+    .sectionTitle {
+        font-size: 36px;
+    }
+
+    .companyDescription,
+    .sectionParagraph {
+        font-size: 18px;
+    }
+
+    .specialText {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem 1.5rem;
+    }
+
+    .companyName {
+        font-size: 32px;
+    }
+
+    .sectionTitle {
+        font-size: 28px;
+    }
+
+    .iconContainer {
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon {
+        width: 25px;
+        height: 25px;
+    }
+}

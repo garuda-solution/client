@@ -79,7 +79,11 @@ const Header = () => {
       <header className={styles.header}>
         <div className={styles.container}>
           <Link className={styles.logo} to="/">
-            <img src="/logo.svg" alt="Garuda Solution" className={styles.logoImage} />
+            <img
+              src="/logo.svg"
+              alt="Garuda Solution"
+              className={styles.logoImage}
+            />
           </Link>
 
           {!isMobile ? (
@@ -87,16 +91,16 @@ const Header = () => {
               <nav className={styles.nav}>
                 <ul>
                   <li>
-                    <a href="/">О компании</a>
+                    <Link to="/about">О компании</Link>
                   </li>
                   <li>
-                    <a href="/about">Деятельность</a>
+                    <Link to="/activity">Деятельность</Link>
                   </li>
                   <li>
-                    <a href="/partners">Сотрудничество</a>
+                    <Link to="/partners">Сотрудничество</Link>
                   </li>
                   <li>
-                    <a href="/contacts">Контакты</a>
+                    <Link to="/contacts">Контакты</Link>
                   </li>
                 </ul>
               </nav>
@@ -156,24 +160,24 @@ const Header = () => {
             <nav className={styles.mobileNav}>
               <ul>
                 <li>
-                  <a href="/" onClick={toggleMenu}>
+                  <Link to="/about" onClick={toggleMenu}>
                     О компании
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/about" onClick={toggleMenu}>
+                  <Link to="/activity" onClick={toggleMenu}>
                     Деятельность
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/partners" onClick={toggleMenu}>
+                  <Link to="/partners" onClick={toggleMenu}>
                     Сотрудничество
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/contacts" onClick={toggleMenu}>
+                  <Link to="/contacts" onClick={toggleMenu}>
                     Контакты
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

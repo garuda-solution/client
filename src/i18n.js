@@ -1,4 +1,3 @@
-// i18n.js
 export const translations = {
   ru: {
     home: {
@@ -64,6 +63,89 @@ export const translations = {
             "Максим Решетников: сейчас задача – грамотно пройти период охлаждения экономики",
         },
       ],
+    },
+    activity: {
+      pageName: "Деятельность",
+      pageTitle: "Гаруда Солюшн",
+      keyServices: "Ключевые услуги",
+      services: {
+        marketAccess: {
+          title: "Доступ к рынкам",
+          description:
+            "Обеспечиваем доступ к международным рынкам и качественной сети контрагентов для реализации коммерческих задач",
+        },
+        businessSupport: {
+          title: "Деловое сопровождение",
+          description:
+            "Предоставляем консалтинговую, юридическую и административную поддержку на всех этапах проекта",
+        },
+        research: {
+          title: "Исследования и аналитика",
+          description:
+            "Проводим социологические и отраслевые исследования для принятия обоснованных управленческих решений",
+        },
+        exportImport: {
+          title: "Экспорт/импорт",
+          description:
+            "Обеспечиваем полное сопровождение экспортных и импортных сделок продовольственной, сельскохозяйственной и иной отраслевой продукции",
+        },
+        businessMissions: {
+          title: "Бизнес-миссии",
+          description:
+            "Представительные экономические и отраслевые форумы с участием лидеров рынка в области ИКТ, кибербезопасности, торговли и промышленности",
+        },
+      },
+      cooperationDirections: "Направления сотрудничества",
+      cooperation: {
+        start: "НАЧАЛО",
+        advancement: "ПРОДВИЖЕНИЕ",
+        realization: "РЕАЛИЗАЦИЯ",
+        businessMissions: "Бизнес-миссии",
+        businessMissionsDescription:
+          "Компания предлагает организацию бизнес-миссий для своих партнеров. Предоставляем консалтинговую и MICE поддержку, включая планирование встреч, подбор местных компаний и решение логистических вопросов",
+        directions: "Направления сотрудничества",
+        directionsDescription:
+          "Управление проектами в различных отраслях, продвижение продукта на зарубежных рынках. Взаимодействие с ключевыми партнерами в области промышленности и торговли, предлагая комплексные решения и стратегии для реализации деловых интересов Заказчика",
+        exportImport: "Экспорт/импорт",
+        exportImportDescription:
+          "Анализируем тренды, разрабатываем стратегии, оказываем поддержку на всех этапах. Реализуем комплекс мер для успешной реализации ВЭД, взаимодействуя с надежными поставщиками, обеспечивая качество и минимизацию рисков",
+      },
+      specializationTitle: "Специализируемся",
+      specialization: {
+        forums: "Форумы и бизнес-миссии",
+        exportImport: "Экспорт и импорт",
+        itProjects: "IT проекты",
+        tourism: "Туризм",
+      },
+    },
+    about: {
+      pageName: "Компания",
+      pageTitle: "Гаруда Солюшн",
+      company: {
+        title: "Компания",
+        description:
+          "Консалтинговая организация с разветвленной сетью партнеров в России и за ее пределами. Мы объединяем усилия деловых, общественных и политических структур с целью успешной реализации проектов любой сложности, оказываем деловое сопровождение инициативам партнеров",
+      },
+      positioning: {
+        title: "Позиционирование",
+        paragraphs: [
+          "Стремимся к надежному и взаимовыгодному сотрудничеству, формируя бизнес-проекты на международных рынках, используя наработанные решения и стратегии",
+          "Предлагаем широкие компетенции, аналитические инструменты и надежных зарубежных партнеров",
+          "Обеспечиваем индивидуальный подход и формируем исключительные предложения исходя из целей и потребностей Заказчика",
+        ],
+      },
+      mission: {
+        title: "Миссия",
+        paragraphs: [
+          "Поддерживать рост и развитие совместных проектных-инициатив. Предлагать комплексные решения для достижения ключевых целей и задач Вашего бизнеса",
+          "Используем глубокое понимание рынков, административные ресурсы и возможности для развития",
+          "Наша цель—поддерживать стратегическое сотрудничество в различных секторах экономики, способствуя устойчивому развитию деловых игроков",
+        ],
+      },
+      photos: {
+        meetingText: "Стратегические встречи с международными партнерами",
+        analyticsText: "Анализ рынков и разработка стратегий",
+      },
     },
   },
   en: {
@@ -132,6 +214,86 @@ export const translations = {
             "Maxim Reshetnikov: the current task is to competently navigate the economic cooling period",
         },
       ],
+    },
+    activity: {
+      pageTitle: "Activity",
+      keyServices: "Key Services",
+      services: {
+        marketAccess: {
+          title: "Market Access",
+          description:
+            "We provide access to international markets and a quality network of counterparties to achieve commercial objectives",
+        },
+        businessSupport: {
+          title: "Business Support",
+          description:
+            "We provide consulting, legal and administrative support at all stages of the project",
+        },
+        research: {
+          title: "Research and Analytics",
+          description:
+            "We conduct sociological and industry research to support informed management decisions",
+        },
+        exportImport: {
+          title: "Export/Import",
+          description:
+            "We provide full support for export and import transactions of food, agricultural and other industry products",
+        },
+        businessMissions: {
+          title: "Business Missions",
+          description:
+            "Representative economic and industry forums with participation of market leaders in ICT, cybersecurity, trade and industry",
+        },
+      },
+      cooperationDirections: "Cooperation Directions",
+      cooperation: {
+        start: "START",
+        advancement: "ADVANCEMENT",
+        realization: "REALIZATION",
+        businessMissions: "Business Missions",
+        businessMissionsDescription:
+          "The company offers organization of business missions for its partners. We provide consulting and MICE support, including meeting planning, selection of local companies and logistics solutions",
+        directions: "Cooperation Directions",
+        directionsDescription:
+          "Project management in various industries, product promotion in foreign markets. Interaction with key partners in industry and trade, offering comprehensive solutions and strategies to realize the Customer's business interests",
+        exportImport: "Export/Import",
+        exportImportDescription:
+          "We analyze trends, develop strategies, provide support at all stages. We implement a set of measures for successful foreign economic activity, interacting with reliable suppliers, ensuring quality and risk minimization",
+      },
+      specializationTitle: "We Specialize In",
+      specialization: {
+        forums: "Forums and Business Missions",
+        exportImport: "Export and Import",
+        itProjects: "IT Projects",
+        tourism: "Tourism",
+      },
+    },
+    about: {
+      company: {
+        title: "Company",
+        description:
+          "Consulting organization with an extensive network of partners in Russia and abroad. We unite the efforts of business, public and political structures for the successful implementation of projects of any complexity, providing business support for partners' initiatives",
+      },
+      positioning: {
+        title: "Positioning",
+        paragraphs: [
+          "We strive for reliable and mutually beneficial cooperation, forming business projects in international markets using proven solutions and strategies",
+          "We offer extensive competencies, analytical tools and reliable foreign partners",
+          "We provide an individual approach and create exceptional offers based on the goals and needs of the Customer",
+        ],
+      },
+      mission: {
+        title: "Mission",
+        paragraphs: [
+          "To support the growth and development of joint project initiatives. To offer comprehensive solutions for achieving the key goals and objectives of your business",
+          "We use deep market understanding, administrative resources and development opportunities",
+          "Our goal is to support strategic cooperation in various sectors of the economy, contributing to the sustainable development of business players",
+        ],
+      },
+      photos: {
+        meetingText: "Strategic meetings with international partners",
+        analyticsText: "Market analysis and strategy development",
+      },
     },
   },
 };
