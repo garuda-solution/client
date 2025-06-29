@@ -6,7 +6,7 @@
 }
 
 .pageHeader {
-    padding: 80px 0 320px;
+    padding: 115px 0 320px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@
 
 .companyName {
     font-family: 'Montserrat', sans-serif;
-    font-size: 96px;
+    font-size: 70px;
     font-weight: 600;
     line-height: 106%;
     letter-spacing: 3px;

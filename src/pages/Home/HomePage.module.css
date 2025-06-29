@@ -65,8 +65,8 @@
 }
 
 .secondaryButton {
-    background-color: transparent;
-    color: white;
+    background: #fff;
+    color: #617F96;
     border: 1px solid white;
 }
 
@@ -245,7 +245,7 @@
 }
 
 .cardNumber {
-    font-size: 1.2rem;
+    font-size: 24px;
     color: #E0DCD9;
     opacity: 0.7;
 }

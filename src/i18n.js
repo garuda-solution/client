@@ -150,6 +150,39 @@ export const translations = {
     cooperation: {
       pageName: "Сотрудничество",
       pageTitle: "Гаруда Солюшн",
+      blocks: {
+        consulting: {
+          title: "Международный бизнес-консалтинг и сопровождение",
+          list1: {
+            item1: "Разработка стратегий выхода на зарубежные рынки",
+            item2: "Юридическое и административное сопровождение сделок",
+            item3:
+              "Поддержка экспортно-импортных операций (поиск контрагентов, минимизация рисков, логистика)",
+          },
+          list2: {
+            item1:
+              "Социологические, отраслевые и маркетинговые исследования (CAPI, CATI, CAWI, фокус-группы)",
+            item2: "Анализ рыночного потенциала и конкурентной среды",
+            item3: "Подготовка аналитических отчетов для принятия решений",
+          },
+        },
+        missions: {
+          title: "Организация деловых миссий и международных мероприятий",
+          list1: {
+            item1:
+              "Проведение бизнес-миссий (подбор партнеров, MICE, переговоры)",
+            item2:
+              "Участие и организация форумов, выставок, отраслевых конференций",
+            item3: "Содействие в установлении B2B и B2C контактов",
+          },
+          list2: {
+            item1: "Продвижение высокотехнологичных решений",
+            item2: "Выход IT-компаний на международные рынки",
+            item3: "Поиск дистрибьюторов и интеграторов за рубежом",
+            item4: "Маркетинговое сопровождение и позиционирование продукта",
+          },
+        },
+      },
     },
     contacts: {
       pageName: "Контакты",
@@ -305,7 +338,40 @@ export const translations = {
     },
     cooperation: {
       pageName: "Cooperation",
-      pageTitle: "with Garuda Solution",
+      pageTitle: "Garuda Solution",
+      blocks: {
+        consulting: {
+          title: "International Business Consulting and Support",
+          list1: {
+            item1: "Development of strategies for entering foreign markets",
+            item2: "Legal and administrative support of transactions",
+            item3:
+              "Support of export-import operations (counterparty search, risk minimization, logistics)",
+          },
+          list2: {
+            item1:
+              "Sociological, industry and marketing research (CAPI, CATI, CAWI, focus groups)",
+            item2: "Analysis of market potential and competitive environment",
+            item3: "Preparation of analytical reports for decision making",
+          },
+        },
+        missions: {
+          title: "Organization of business missions and international events",
+          list1: {
+            item1:
+              "Conducting business missions (partner selection, MICE, negotiations)",
+            item2:
+              "Participation and organization of forums, exhibitions, industry conferences",
+            item3: "Assistance in establishing B2B and B2C contacts",
+          },
+          list2: {
+            item1: "Promotion of high-tech solutions",
+            item2: "Entry of IT companies into international markets",
+            item3: "Search for distributors and integrators abroad",
+            item4: "Marketing support and product positioning",
+          },
+        },
+      },
     },
     contacts: {
       pageName: "Contacts",

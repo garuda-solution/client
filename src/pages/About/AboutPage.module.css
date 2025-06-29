@@ -7,7 +7,7 @@
 
 /* Page Header */
 .pageHeader {
-    padding: 80px 0 340px;
+    padding: 115px 0 340px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -16,13 +16,13 @@
 }
 
 .companyName {
-    text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-size: 96px;
     font-weight: 600;
     line-height: 106%;
     letter-spacing: 3px;
-    margin: 0;
+    margin: 0 0 60px 0;
+    text-transform: uppercase;
 }
 
 .pageTitle {
@@ -37,9 +37,16 @@
     display: inline-block;
 }
 
-/* Company Section */
-.companySection {
-    margin-bottom: 340px;
+.companyDescription {
+    font-size: 24px;
+    line-height: 1.6;
+    max-width: 1310px;
+    margin: 0 auto;
+}
+
+/* Common Text Sections */
+.textSection {
+    margin-bottom: 80px;
 }
 
 .sectionTitle {
@@ -50,23 +57,11 @@
     text-align: left;
 }
 
-.companyDescription {
-    font-size: 24px;
-    line-height: 1.6;
-    max-width: 900px;
-    margin: 0;
-}
-
-/* Common Text Sections */
-.textSection {
-    margin-bottom: 80px;
-}
-
 .sectionParagraph {
     font-size: 24px;
     line-height: 1.6;
     margin-bottom: 24px;
-    max-width: 900px;
+    max-width: 1200px;
 }
 
 /* Photo Grid Section */
@@ -81,38 +76,54 @@
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    max-width: 580px;
 }
 
 .photo {
+    width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.filteredPhoto {
     filter: grayscale(100%);
     opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
 }
 
 .specialPhoto {
     background-color: #18191E;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .specialContent {
     padding: 2rem;
+    max-width: 80%;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.iconWrapper {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
+    justify-content: start;
+    width: 85px;
 }
 
 .iconContainer {
     width: 60px;
     height: 60px;
-    background-color: #2A2B30;
+    background-color: #89A8C0;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
+    margin: 0 auto 1.5rem auto;
 }
 
 .icon {
@@ -136,6 +147,7 @@
 @media (max-width: 1200px) {
     .companyName {
         font-size: 52px;
+        margin-bottom: 40px;
     }
 
     .sectionTitle {
@@ -156,6 +168,11 @@
     .photoContainer {
         height: 250px !important;
     }
+
+    .iconWrapper {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -165,6 +182,7 @@
 
     .companyName {
         font-size: 42px;
+        margin-bottom: 30px;
     }
 
     .sectionTitle {
@@ -188,6 +206,12 @@
 
     .companyName {
         font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .pageTitle {
+        font-size: 16px;
+        padding: 4px 20px;
     }
 
     .sectionTitle {

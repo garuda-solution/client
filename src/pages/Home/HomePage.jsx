@@ -64,10 +64,16 @@ const HomePage = ({ lang = "ru" }) => {
           <div className={styles.buttons}>
             <button className={styles.primaryButton}>
               <span>{t("home.learnMore")}</span>
-              <Icon variant="arrow-up-right" color="#fff" />
+              <img
+                src="/u_arrow.svg"
+                alt=""
+                className={styles.arrow}
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
             </button>
             <button className={styles.secondaryButton}>
-              {t("home.contact")}
+              <span>{t("home.contact")}</span>
+              <img src="/u_arrow.svg" alt="" className={styles.arrow} />
             </button>
           </div>
         </div>
@@ -107,7 +113,7 @@ const HomePage = ({ lang = "ru" }) => {
               >
                 <div className={styles.cardHeader}>
                   <h3>{partner.title}</h3>
-                  <span className={styles.cardNumber}>{`0${index + 1}`}</span>
+                  <span className={styles.cardNumber}>{`0${index + 1}.`}</span>
                 </div>
                 <p>{partner.description}</p>
               </div>

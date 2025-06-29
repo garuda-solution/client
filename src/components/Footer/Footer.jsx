@@ -61,13 +61,13 @@ const Footer = () => {
 
           {/* Правая колонка с навигацией */}
           <div className={styles.navColumn}>
-            <NavLink to="/" className={styles.navLink}>
+            <NavLink to="/about" className={styles.navLink}>
               О компании
             </NavLink>
-            <NavLink to="/about" className={styles.navLink}>
+            <NavLink to="/activity" className={styles.navLink}>
               Деятельность
             </NavLink>
-            <NavLink to="/partners" className={styles.navLink}>
+            <NavLink to="/cooperation" className={styles.navLink}>
               Сотрудничество
             </NavLink>
             <NavLink to="/contacts" className={styles.navLink}>

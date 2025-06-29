@@ -33,7 +33,7 @@ const AboutPage = ({ lang = "ru" }) => {
       alt: "Meeting",
       height: 203,
       title: t("about.positioning.paragraphs")[1],
-      icon: "/images/about/icon1.svg",
+      icon: "/images/about/u_bag.svg",
     },
     {
       id: 3,
@@ -41,7 +41,7 @@ const AboutPage = ({ lang = "ru" }) => {
       alt: "Analytics",
       height: 203,
       title: t("about.positioning.paragraphs")[2],
-      icon: "/images/about/icon2.svg",
+      icon: "/images/about/u_crosshair.svg",
     },
     {
       id: 4,
@@ -64,7 +64,7 @@ const AboutPage = ({ lang = "ru" }) => {
       alt: "Development",
       height: 203,
       title: t("about.mission.paragraphs")[1],
-      icon: "/images/about/icon3.svg",
+      icon: "/images/about/u_presentation-check.svg",
     },
     {
       id: 3,
@@ -72,7 +72,7 @@ const AboutPage = ({ lang = "ru" }) => {
       alt: "Cooperation",
       height: 203,
       title: t("about.mission.paragraphs")[2],
-      icon: "/images/about/icon4.svg",
+      icon: "/images/about/u_check.svg",
     },
     {
       id: 4,
@@ -111,11 +111,19 @@ const AboutPage = ({ lang = "ru" }) => {
             }`}
             style={{ height: `${photo.height}px` }}
           >
-            <img src={photo.src} alt={photo.alt} className={styles.photo} />
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              className={`${styles.photo} ${
+                photo.title ? styles.filteredPhoto : ""
+              }`}
+            />
             {photo.title && (
               <div className={styles.specialContent}>
-                <div className={styles.iconContainer}>
-                  <img src={photo.icon} alt="" className={styles.icon} />
+                <div className={styles.iconWrapper}>
+                  <div className={styles.iconContainer}>
+                    <img src={photo.icon} alt="" className={styles.icon} />
+                  </div>
                 </div>
                 <p className={styles.specialText}>{photo.title}</p>
               </div>
@@ -142,11 +150,19 @@ const AboutPage = ({ lang = "ru" }) => {
             }`}
             style={{ height: `${photo.height}px` }}
           >
-            <img src={photo.src} alt={photo.alt} className={styles.photo} />
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              className={`${styles.photo} ${
+                photo.title ? styles.filteredPhoto : ""
+              }`}
+            />
             {photo.title && (
               <div className={styles.specialContent}>
-                <div className={styles.iconContainer}>
-                  <img src={photo.icon} alt="" className={styles.icon} />
+                <div className={styles.iconWrapper}>
+                  <div className={styles.iconContainer}>
+                    <img src={photo.icon} alt="" className={styles.icon} />
+                  </div>
                 </div>
                 <p className={styles.specialText}>{photo.title}</p>
               </div>
