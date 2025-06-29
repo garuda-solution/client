@@ -1,7 +1,16 @@
-const ContactsPage = () => {
+import { useTranslation } from "../../i18n";
+import styles from "./ContactsPage.module.css";
+
+const ContactsPage = ({ lang = "ru" }) => {
+  const t = useTranslation(lang);
+
   return (
-    <div>
-      <h2>Contacts Page</h2>
+    <div className={styles.container}>
+      {/* Page Header */}
+      <section className={styles.pageHeader}>
+        <span className={styles.pageTitle}>{t("contacts.pageName")}</span>
+        <h2 className={styles.companyName}>{t("contacts.pageTitle")}</h2>
+      </section>
     </div>
   );
 };

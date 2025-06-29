@@ -97,7 +97,7 @@ const Header = () => {
                     <Link to="/activity">Деятельность</Link>
                   </li>
                   <li>
-                    <Link to="/partners">Сотрудничество</Link>
+                    <Link to="/cooperation">Сотрудничество</Link>
                   </li>
                   <li>
                     <Link to="/contacts">Контакты</Link>
@@ -170,7 +170,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/partners" onClick={toggleMenu}>
+                  <Link to="/cooperation" onClick={toggleMenu}>
                     Сотрудничество
                   </Link>
                 </li>

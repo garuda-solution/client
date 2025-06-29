@@ -147,6 +147,14 @@ export const translations = {
         analyticsText: "Анализ рынков и разработка стратегий",
       },
     },
+    cooperation: {
+      pageName: "Сотрудничество",
+      pageTitle: "Гаруда Солюшн",
+    },
+    contacts: {
+      pageName: "Контакты",
+      pageTitle: "Гаруда Солюшн",
+    },
   },
   en: {
     home: {
@@ -294,6 +302,14 @@ export const translations = {
         meetingText: "Strategic meetings with international partners",
         analyticsText: "Market analysis and strategy development",
       },
+    },
+    cooperation: {
+      pageName: "Cooperation",
+      pageTitle: "with Garuda Solution",
+    },
+    contacts: {
+      pageName: "Contacts",
+      pageTitle: "with Garuda Solution",
     },
   },
 };
