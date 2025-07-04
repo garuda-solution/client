@@ -1,5 +1,3 @@
-import React from "react";
-import Icon from "../../components/Icon/Icon";
 import styles from "./HomePage.module.css";
 import { useTranslation } from "../../i18n";
 
@@ -55,21 +53,24 @@ const HomePage = ({ lang = "ru" }) => {
     "luzales.svg",
   ];
 
+  const competenciesImages = [
+    "/images/comp1.png",
+    "/images/comp2.png",
+    "/images/comp3.png",
+    "/images/comp4.png",
+    "/images/comp5.png",
+    "/images/comp6.png",
+  ];
+
   return (
     <div className={styles.container}>
-      {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1>{t("home.title")}</h1>
           <div className={styles.buttons}>
             <button className={styles.primaryButton}>
               <span>{t("home.learnMore")}</span>
-              <img
-                src="/u_arrow.svg"
-                alt=""
-                className={styles.arrow}
-                style={{ filter: "brightness(0) invert(1)" }}
-              />
+              <img src="/u_arrow.svg" alt="" className={styles.arrow} />
             </button>
             <button className={styles.secondaryButton}>
               <span>{t("home.contact")}</span>
@@ -79,28 +80,46 @@ const HomePage = ({ lang = "ru" }) => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className={styles.about}>
-        <div className={styles.aboutCircle}></div>
-        <p>{t("home.aboutText")}</p>
+      <section className={styles.aboutSection}>
+        <div className={styles.aboutCircle}>
+          <div>
+            <div>
+              <img src="/greeting.svg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div className={styles.aboutContent}>
+          <p>{t("home.aboutText")}</p>
+        </div>
       </section>
 
-      {/* Competencies Section */}
-      <section className={styles.competencies}>
-        <h2>{t("home.competencies")}</h2>
-        <div className={styles.grid}>
+      <section className={styles.competenciesSection}>
+        <h2 className={styles.sectionTitle}>{t("home.competencies")}</h2>
+        <div className={styles.competenciesGrid}>
           {t("home.competenciesList").map((item, index) => (
-            <div key={index} className={styles.card}>
-              <h3>{item}</h3>
+            <div key={index} className={styles.competencyCard}>
+              <div className={styles.competencyImageWrapper}>
+                <img
+                  src={competenciesImages[index]}
+                  alt={item}
+                  className={styles.competencyImage}
+                />
+                <span className={styles.competencyNumber}>{`0${
+                  index + 1
+                }`}</span>
+                <h3 className={styles.competencyTitle}>{item}</h3>
+              </div>
             </div>
           ))}
         </div>
-        <button className={styles.moreButton}>{t("home.moreDetails")}</button>
+        <button className={styles.moreButton}>
+          {t("home.moreDetails")}
+          <img src="/u_arrow.svg" alt="" className={styles.arrow} />
+        </button>
       </section>
 
-      {/* Partners Section */}
       <section className={styles.partnersSection}>
-        <h2>{t("home.forPartners")}</h2>
+        <h2 className={styles.sectionTitle}>{t("home.forPartners")}</h2>
         <div className={styles.partnersContainer}>
           <div className={styles.partnersGrid}>
             {partnersData.map((partner, index) => (
@@ -108,7 +127,8 @@ const HomePage = ({ lang = "ru" }) => {
                 key={partner.id}
                 className={styles.partnerCard}
                 style={{
-                  alignSelf: index < 2 ? "flex-start" : "flex-end",
+                  gridRow: index < 2 ? "1" : "2",
+                  gridColumn: index % 2 === 0 ? "1" : "2",
                 }}
               >
                 <div className={styles.cardHeader}>
@@ -125,11 +145,9 @@ const HomePage = ({ lang = "ru" }) => {
         </div>
       </section>
 
-      {/* Trust Section */}
       <section className={styles.trustSection}>
-        <h2>{t("home.trustUs")}</h2>
+        <h2 className={styles.sectionTitle}>{t("home.trustUs")}</h2>
         <div className={styles.trustLogos}>
-          {/* First row - 4 logos */}
           <div className={styles.logosRow}>
             {partnersLogos.slice(0, 4).map((logo, index) => (
               <div key={index} className={styles.trustLogo}>
@@ -141,7 +159,6 @@ const HomePage = ({ lang = "ru" }) => {
               </div>
             ))}
           </div>
-          {/* Second row - 3 logos */}
           <div className={styles.logosRow}>
             {partnersLogos.slice(4, 7).map((logo, index) => (
               <div key={index + 4} className={styles.trustLogo}>
@@ -153,7 +170,6 @@ const HomePage = ({ lang = "ru" }) => {
               </div>
             ))}
           </div>
-          {/* Third row - 4 logos */}
           <div className={styles.logosRow}>
             {partnersLogos.slice(7, 11).map((logo, index) => (
               <div key={index + 7} className={styles.trustLogo}>
@@ -168,9 +184,8 @@ const HomePage = ({ lang = "ru" }) => {
         </div>
       </section>
 
-      {/* News Section */}
       <section className={styles.newsSection}>
-        <h2>{t("home.news")}</h2>
+        <h2 className={styles.sectionTitle}>{t("home.news")}</h2>
         <div className={styles.newsContainer}>
           {newsData.map((news) => (
             <div key={news.id} className={styles.newsCard}>

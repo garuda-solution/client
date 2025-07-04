@@ -17,8 +17,32 @@
     margin: 0 auto;
     padding: 41px 31px;
     gap: 40px;
-    background: #13151d;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        /* Затемняющий слой */
+        url('/map.png');
+    background-size: cover;
+    background-position: center;
     border-radius: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.contactInfo h3,
+.contactValue,
+.contactForm h3,
+.contactForm input,
+.contactForm input::placeholder,
+.privacy {
+    position: relative;
+    z-index: 2;
+}
+
+.contactForm {
+    background: rgba(97, 127, 150, 0.9);
+    /* Добавляем прозрачность */
+    position: relative;
+    z-index: 2;
 }
 
 .contactInfo {
