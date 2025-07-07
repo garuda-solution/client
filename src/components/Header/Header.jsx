@@ -9,8 +9,11 @@ import cnyFlag from "../../assets/cny-flag.svg";
 import clock from "../../assets/clock.svg";
 import { Link } from "react-router-dom";
 import GlobeWidget from "../GlobeWidget/GlobeWidget";
+import { useTranslation } from "../../i18n";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
+  const t = useTranslation("ru");
   const [rates, setRates] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState("");
@@ -105,6 +108,7 @@ const Header = () => {
                 </ul>
               </nav>
               <div className={styles.rightHeaderContainer}>
+                <LanguageSwitcher lang={"ru"} setLang={() => alert()} />
                 <div className={styles.clockContainer}>
                   {/* <img src={clock} alt="clock" className={styles.clock} /> */}
                   <GlobeWidget time={currentTime} />

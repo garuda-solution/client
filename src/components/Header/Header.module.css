@@ -317,3 +317,159 @@ nav {
         height: 60px;
     }
 }
+
+/* Language Switcher Styles */
+.languageSwitcher {
+    position: absolute;
+    right: 5px;
+}
+
+.languageButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 12px;
+    transition: background-color 0.3s;
+}
+
+.languageButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.languageFlag {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.languageDropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #18191E;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 5px 0;
+    z-index: 1000;
+    min-width: 100px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.languageOption {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+.languageOption:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.languageOption.active {
+    background-color: rgba(97, 127, 150, 0.3);
+}
+
+/* Для мобильной версии */
+.mobileLanguageSwitcher {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.mobileLanguageButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .languageSwitcher {
+        margin-right: 10px;
+    }
+}
+
+
+
+/* Language Switcher Styles */
+.languageSwitcher {
+    display: flex;
+    gap: 8px;
+    margin-right: 20px;
+}
+
+.languageButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.languageButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.languageButton.active {
+    background-color: rgba(97, 127, 150, 0.3);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.languageFlag {
+    width: 24px;
+    height: 18px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Для мобильной версии */
+.mobileLanguageSwitcher {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.mobileLanguageSwitcher .languageButton {
+    padding: 8px;
+}
+
+.mobileLanguageSwitcher .languageFlag {
+    width: 28px;
+    height: 21px;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .languageSwitcher {
+        margin-right: 10px;
+    }
+}
