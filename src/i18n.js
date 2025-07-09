@@ -2,6 +2,12 @@ import { useEffect, useState } from "react";
 
 export const translations = {
   ru: {
+    header: {
+      navAbout: "О компании",
+      navActivity: "Деятельность",
+      navCooperation: "Сотрудничество",
+      navContacts: "Контакты",
+    },
     home: {
       title: "ВАШИ ЦЕЛИ – НАШИ РЕШЕНИЯ",
       learnMore: "Узнать больше",
@@ -45,6 +51,7 @@ export const translations = {
       trustUs: "Нам доверяют",
       news: "Новости",
       readMore: "Читать далее",
+      readLess: "Свернуть",
       newsItems: [
         {
           title: "Новость 1",
@@ -192,6 +199,12 @@ export const translations = {
     },
   },
   en: {
+    header: {
+      navAbout: "About the company",
+      navActivity: "Activities",
+      navCooperation: "Cooperation",
+      navContacts: "Contacts",
+    },
     home: {
       title: "YOUR GOALS – OUR SOLUTIONS",
       learnMore: "Learn more",
@@ -235,6 +248,7 @@ export const translations = {
       trustUs: "Trusted by",
       news: "News",
       readMore: "Read more",
+      readLess: "Hide",
       newsItems: [
         {
           title: "News 1",

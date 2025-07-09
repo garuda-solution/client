@@ -48,10 +48,17 @@
 }
 
 .primaryButton,
+.secondaryButton {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.primaryButton,
 .secondaryButton,
 .moreButton,
 .contactButton {
-    padding: 1.1rem 2.5rem;
+    padding: 1rem 2.5rem;
     border: none;
     border-radius: 45px;
     font-size: 1rem;
@@ -88,7 +95,6 @@
 .primaryButton:hover,
 .moreButton:hover {
     background-color: #4a677e;
-    transform: translateY(-2px);
 }
 
 .secondaryButton:hover {
@@ -223,6 +229,7 @@
 
 .partnersSection {
     padding: 4rem 1rem;
+    position: relative;
 }
 
 .partnersContainer {
@@ -233,10 +240,32 @@
     gap: 2rem;
 }
 
+.partnersWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
 .partnersGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 1172px;
+}
+
+.partnersRow {
+    display: flex;
+    gap: 1rem;
+}
+
+.partnersRow:first-child {
+    justify-content: flex-start;
+}
+
+/* Второй ряд - выравниваем вправо */
+.partnersRow:last-child {
+    justify-content: flex-end;
 }
 
 .partnerCard {
@@ -245,6 +274,8 @@
     border: 1px solid #E0DCD9;
     border-radius: 16px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 318px;
+    width: 380px;
 }
 
 .partnerCard:hover {
@@ -269,7 +300,7 @@
 
 .cardNumber {
     font-size: 1.5rem;
-    color: #E0DCD9;
+    color: #617F96;
     opacity: 0.7;
 }
 
@@ -283,7 +314,7 @@
 }
 
 .contactButton {
-    align-self: center;
+    margin: 2rem auto 0;
     padding: 1rem 2rem;
     background-color: #617F96;
     color: white;
@@ -293,15 +324,10 @@
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
 }
 
 .contactButton:hover {
     background-color: #4a677e;
-    transform: translateY(-2px);
 }
 
 .contactButton .arrow {
@@ -370,7 +396,7 @@
     gap: 2rem;
     overflow-x: auto;
     padding: 1rem 2rem;
-    max-width: 1800px;
+    max-width: 1680px;
     margin: 0 auto;
     scrollbar-width: none;
 }
@@ -387,6 +413,7 @@
     position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
+    transition: height 0.3s ease;
 }
 
 .newsImage {
@@ -410,6 +437,19 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.newsContent.expanded {
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.newsContent.expanded::-webkit-scrollbar {
+    display: none;
 }
 
 .newsContent p {
@@ -421,6 +461,27 @@
     margin: 0;
 }
 
+.newsDescription {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: start;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+}
+
+.newsContent.expanded .newsDescription {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    text-overflow: unset;
+}
+
 .readButton {
     cursor: pointer;
     color: #fff;
@@ -428,6 +489,7 @@
     font-size: 0.9rem;
     align-self: flex-start;
     transition: color 0.3s;
+    margin-top: auto;
 }
 
 .readButton:hover {
@@ -446,6 +508,16 @@
 
     .logosRow {
         gap: 6rem;
+    }
+
+    .partnersGrid {
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .partnerCard {
+        width: 340px;
+        height: 280px;
     }
 }
 
@@ -471,6 +543,30 @@
     }
 }
 
+@media (max-width: 900px) {
+
+    .partnersRow:first-child,
+    .partnersRow:last-child {
+        padding: 0;
+        justify-content: center;
+    }
+
+    .partnersGrid {
+        gap: 1.5rem;
+    }
+
+    .partnersRow {
+        flex-wrap: wrap;
+    }
+
+    .partnerCard {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        min-height: 250px;
+    }
+}
+
 @media (max-width: 768px) {
     .sectionTitle {
         padding: 0 2rem;
@@ -492,6 +588,21 @@
     .trustLogo {
         width: 140px;
         height: 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .partnerCard {
+        padding: 1.2rem;
+    }
+
+    .cardHeader h3 {
+        font-size: 1.3rem;
+    }
+
+    .contactButton {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
@@ -637,7 +748,6 @@
 
 .moreButton:hover {
     background-color: #4a677e;
-    transform: translateY(-2px);
 }
 
 @media (max-width: 1200px) {

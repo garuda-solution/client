@@ -94,16 +94,16 @@ const Header = () => {
               <nav className={styles.nav}>
                 <ul>
                   <li>
-                    <Link to="/about">О компании</Link>
+                    <Link to="/about">{t("header.navAbout")}</Link>
                   </li>
                   <li>
-                    <Link to="/activity">Деятельность</Link>
+                    <Link to="/activity">{t("header.navActivity")}</Link>
                   </li>
                   <li>
-                    <Link to="/cooperation">Сотрудничество</Link>
+                    <Link to="/cooperation">{t("header.navCooperation")}</Link>
                   </li>
                   <li>
-                    <Link to="/contacts">Контакты</Link>
+                    <Link to="/contacts">{t("header.navContacts")}</Link>
                   </li>
                 </ul>
               </nav>

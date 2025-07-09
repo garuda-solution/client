@@ -47,6 +47,7 @@ const AboutPage = () => {
       src: "/images/about/photo2.png",
       alt: "Team",
       height: 250,
+      marginTop: true,
     },
   ];
 
@@ -78,6 +79,7 @@ const AboutPage = () => {
       src: "/images/about/photo4.png",
       alt: "Partners",
       height: 250,
+      marginTop: true,
     },
   ];
 
@@ -108,7 +110,7 @@ const AboutPage = () => {
             className={`${styles.photoContainer} ${
               photo.title ? styles.specialPhoto : ""
             }`}
-            style={{ height: `${photo.height}px` }}
+            style={{ height: `${photo.height}px`, marginTop: photo.marginTop ? "-48px" : "" }}
           >
             <img
               src={photo.src}
@@ -147,7 +149,7 @@ const AboutPage = () => {
             className={`${styles.photoContainer} ${
               photo.title ? styles.specialPhoto : ""
             }`}
-            style={{ height: `${photo.height}px` }}
+            style={{ height: `${photo.height}px`, marginTop: photo.marginTop ? "-48px" : "" }}
           >
             <img
               src={photo.src}

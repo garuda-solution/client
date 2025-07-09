@@ -153,47 +153,48 @@ const ActivityPage = () => {
         </div>
       </section>
 
-      {/* Specialization Section */}
       <section className={styles.specializationSection}>
         <h2 className={styles.sectionTitle}>
           {t("activity.specializationTitle")}
         </h2>
-        <div className={styles.specializationGrid}>
-          <div className={styles.specializationRow}>
-            {specializationData.slice(0, 2).map((item, index) => (
-              <div key={item.id} className={styles.specializationItem}>
-                <div className={styles.videoWrapper}>
-                  <video
-                    ref={(el) => (videoRefs.current[index] = el)}
-                    src={item.video}
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    className={styles.specializationVideo}
-                  />
-                  <h3 className={styles.specializationTitle}>{item.title}</h3>
+        <div className={styles.specializationWrapper}>
+          <div className={styles.specializationGrid}>
+            <div className={styles.specializationRow}>
+              {specializationData.slice(0, 2).map((item, index) => (
+                <div key={item.id} className={styles.specializationItem}>
+                  <div className={styles.videoWrapper}>
+                    <video
+                      ref={(el) => (videoRefs.current[index] = el)}
+                      src={item.video}
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className={styles.specializationVideo}
+                    />
+                    <h3 className={styles.specializationTitle}>{item.title}</h3>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          <div className={styles.specializationRow}>
-            {specializationData.slice(2, 4).map((item, index) => (
-              <div key={item.id} className={styles.specializationItem}>
-                <div className={styles.videoWrapper}>
-                  <video
-                    ref={(el) => (videoRefs.current[index + 2] = el)}
-                    src={item.video}
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    className={styles.specializationVideo}
-                  />
-                  <h3 className={styles.specializationTitle}>{item.title}</h3>
+              ))}
+            </div>
+            <div className={styles.specializationRow}>
+              {specializationData.slice(2, 4).map((item, index) => (
+                <div key={item.id} className={styles.specializationItem}>
+                  <div className={styles.videoWrapper}>
+                    <video
+                      ref={(el) => (videoRefs.current[index + 2] = el)}
+                      src={item.video}
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className={styles.specializationVideo}
+                    />
+                    <h3 className={styles.specializationTitle}>{item.title}</h3>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

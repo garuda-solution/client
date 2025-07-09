@@ -1,16 +1,25 @@
 import styles from "./HomePage.module.css";
 import { useTranslation } from "../../i18n";
-import { useNews } from "../../context/NewsContext";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNews } from "../../context/NewsContext";
 
 const HomePage = () => {
   const { t } = useTranslation();
   const { news, loading, error } = useNews();
+  const [expandedNews, setExpandedNews] = useState({});
 
   const handleScrollToContacts = () => {
     document.getElementById("contact-section")?.scrollIntoView({
       behavior: "smooth",
     });
+  };
+
+  const toggleNewsExpansion = (id) => {
+    setExpandedNews((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
   };
 
   const partnersData = [
@@ -134,26 +143,46 @@ const HomePage = () => {
 
       <section className={styles.partnersSection}>
         <h2 className={styles.sectionTitle}>{t("home.forPartners")}</h2>
-        <div className={styles.partnersContainer}>
+        <div className={styles.partnersWrapper}>
           <div className={styles.partnersGrid}>
-            {partnersData.map((partner, index) => (
-              <div key={partner.id} className={styles.partnerCard}>
-                <div className={styles.cardHeader}>
-                  <h3>{partner.title}</h3>
-                  <span className={styles.cardNumber}>{`0${index + 1}.`}</span>
+            {/* Первый ряд - смещен влево */}
+            <div className={styles.partnersRow}>
+              {partnersData.slice(0, 2).map((partner, index) => (
+                <div key={partner.id} className={styles.partnerCard}>
+                  <div className={styles.cardHeader}>
+                    <h3>{partner.title}</h3>
+                    <span className={styles.cardNumber}>{`0${
+                      index + 1
+                    }.`}</span>
+                  </div>
+                  <p>{partner.description}</p>
                 </div>
-                <p>{partner.description}</p>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* Второй ряд - смещен вправо */}
+            <div className={styles.partnersRow}>
+              {partnersData.slice(2, 4).map((partner, index) => (
+                <div key={partner.id} className={styles.partnerCard}>
+                  <div className={styles.cardHeader}>
+                    <h3>{partner.title}</h3>
+                    <span className={styles.cardNumber}>{`0${
+                      index + 3
+                    }.`}</span>
+                  </div>
+                  <p>{partner.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <button
-            className={styles.contactButton}
-            onClick={handleScrollToContacts}
-          >
-            {t("home.contactUs")}
-            <img src="/arrow-right.svg" alt="" className={styles.arrow} />
-          </button>
         </div>
+        <button
+          className={styles.contactButton}
+          onClick={handleScrollToContacts}
+        >
+          {t("home.contactUs")}
+          <img src="/arrow-right.svg" alt="" className={styles.arrow} />
+        </button>
       </section>
 
       <section className={styles.trustSection}>
@@ -198,17 +227,28 @@ const HomePage = () => {
       <section className={styles.newsSection}>
         <h2 className={styles.sectionTitle}>{t("home.news")}</h2>
         <div className={styles.newsContainer}>
-          {newsData.map((news) => (
-            <div key={news._id} className={styles.newsCard}>
+          {newsData?.map((news) => (
+            <div key={news.id} className={styles.newsCard}>
               <div
                 className={styles.newsImage}
                 style={{ backgroundImage: `url(${news.img})` }}
                 role="img"
                 aria-label={news.title}
               ></div>
-              <div className={styles.newsContent}>
-                <p>{news.description}</p>
-                <span className={styles.readButton}>{t("home.readMore")}</span>
+              <div
+                className={`${styles.newsContent} ${
+                  expandedNews[news.id] ? styles.expanded : ""
+                }`}
+              >
+                <p className={styles.newsDescription}>{news.description}</p>
+                <span
+                  className={styles.readButton}
+                  onClick={() => toggleNewsExpansion(news.id)}
+                >
+                  {expandedNews[news.id]
+                    ? t("home.readLess")
+                    : t("home.readMore")}
+                </span>
               </div>
             </div>
           ))}

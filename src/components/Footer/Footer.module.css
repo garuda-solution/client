@@ -9,6 +9,18 @@
     /* background: #7092ab; */
 }
 
+.dividerWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.divider {
+    height: 1px;
+    width: 90%;
+    background: #fff;
+    border-radius: 10px;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -273,4 +285,24 @@
     .logo {
         width: 120px;
     }
+}
+
+/* Добавьте эти стили в конец файла */
+.successMessage {
+    color: #4BB543;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.errorMessage {
+    color: #ff3333;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
