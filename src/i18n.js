@@ -259,7 +259,8 @@ export const translations = {
       ],
     },
     activity: {
-      pageTitle: "Activity",
+      pageName: "Activities",
+      pageTitle: "of Garuda Solution",
       keyServices: "Key Services",
       services: {
         marketAccess: {
@@ -312,10 +313,11 @@ export const translations = {
       },
     },
     about: {
+      pageName: "Company",
+      pageTitle: "Garuda Solution",
       company: {
         title: "Company",
-        description:
-          "Consulting organization with an extensive network of partners in Russia and abroad. We unite the efforts of business, public and political structures for the successful implementation of projects of any complexity, providing business support for partners' initiatives",
+        description: "A consulting organization with an extensive network of partners in Russia and abroad. We unite the efforts of business, public and political structures with the aim of successfully implementing projects of any complexity, and provide business support to partners' initiatives"
       },
       positioning: {
         title: "Positioning",

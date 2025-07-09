@@ -1,10 +1,17 @@
 import styles from "./HomePage.module.css";
 import { useTranslation } from "../../i18n";
 import { useNews } from "../../context/NewsContext";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const { t } = useTranslation();
   const { news, loading, error } = useNews();
+
+  const handleScrollToContacts = () => {
+    document.getElementById("contact-section")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
 
   const partnersData = [
     {
@@ -72,11 +79,14 @@ const HomePage = () => {
         <div className={styles.heroContent}>
           <h1>{t("home.title")}</h1>
           <div className={styles.buttons}>
-            <button className={styles.primaryButton}>
+            <Link className={styles.primaryButton} to="about">
               <span>{t("home.learnMore")}</span>
-              <img src="/u_arrow.svg" alt="" className={styles.arrow} />
-            </button>
-            <button className={styles.secondaryButton}>
+              <img src="/u_arrow-white.svg" alt="" className={styles.arrow} />
+            </Link>
+            <button
+              className={styles.secondaryButton}
+              onClick={handleScrollToContacts}
+            >
               <span>{t("home.contact")}</span>
               <img src="/u_arrow.svg" alt="" className={styles.arrow} />
             </button>
@@ -118,7 +128,7 @@ const HomePage = () => {
         </div>
         <button className={styles.moreButton}>
           {t("home.moreDetails")}
-          <img src="/u_arrow.svg" alt="" className={styles.arrow} />
+          <img src="/u_arrow-white.svg" alt="" className={styles.arrow} />
         </button>
       </section>
 
@@ -127,14 +137,7 @@ const HomePage = () => {
         <div className={styles.partnersContainer}>
           <div className={styles.partnersGrid}>
             {partnersData.map((partner, index) => (
-              <div
-                key={partner.id}
-                className={styles.partnerCard}
-                style={{
-                  gridRow: index < 2 ? "1" : "2",
-                  gridColumn: index % 2 === 0 ? "1" : "2",
-                }}
-              >
+              <div key={partner.id} className={styles.partnerCard}>
                 <div className={styles.cardHeader}>
                   <h3>{partner.title}</h3>
                   <span className={styles.cardNumber}>{`0${index + 1}.`}</span>
@@ -143,8 +146,12 @@ const HomePage = () => {
               </div>
             ))}
           </div>
-          <button className={styles.contactButton}>
+          <button
+            className={styles.contactButton}
+            onClick={handleScrollToContacts}
+          >
             {t("home.contactUs")}
+            <img src="/arrow-right.svg" alt="" className={styles.arrow} />
           </button>
         </div>
       </section>

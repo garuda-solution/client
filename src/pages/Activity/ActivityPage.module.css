@@ -54,12 +54,12 @@
 .servicesGrid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 1rem;
+    gap: 0.6rem;
     margin-bottom: 2rem;
 }
 
 .serviceCard {
-    background: transparent;
+    background: #18191E;
     padding: 2rem;
     border: 1px solid #E0DCD9;
     border-radius: 16px;

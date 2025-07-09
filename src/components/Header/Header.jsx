@@ -110,7 +110,6 @@ const Header = () => {
               <div className={styles.rightHeaderContainer}>
                 <LanguageSwitcher lang={language} setLang={changeLanguage} />
                 <div className={styles.clockContainer}>
-                  {/* <img src={clock} alt="clock" className={styles.clock} /> */}
                   <GlobeWidget time={currentTime} />
                   <span className={styles.time}>{currentTime}</span>
                 </div>
@@ -151,7 +150,6 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Мобильное меню */}
       {isMobile && (
         <div
           className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ""}`}
@@ -186,10 +184,16 @@ const Header = () => {
               </ul>
             </nav>
             <div className={styles.mobileInfo}>
-              <div className={styles.mobileClock}>
-                {/* <img src={clock} alt="clock" /> */}
-                <GlobeWidget time={currentTime} />
-                <span>{currentTime}</span>
+              <div className={styles.mobileTopRow}>
+                <div className={styles.mobileClock}>
+                  <GlobeWidget time={currentTime} />
+                  <span>{currentTime}</span>
+                </div>
+                <LanguageSwitcher
+                  lang={language}
+                  setLang={changeLanguage}
+                  mobile
+                />
               </div>
               <div className={styles.mobileCurrency}>
                 <div className={styles.currencyItem}>

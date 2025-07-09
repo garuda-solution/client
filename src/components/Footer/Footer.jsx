@@ -4,8 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      {/* Верхняя часть футера с контактной информацией и формой */}
-      <div className={styles.topSection}>
+      <div id="contact-section" className={styles.topSection}>
         <div className={styles.container}>
           <div className={styles.contactInfo}>
             <h3>Открыты к сотрудничеству и деловым предложениям</h3>
@@ -35,10 +34,8 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Нижняя часть футера */}
       <div className={styles.bottomSection}>
         <div className={styles.bottomContainer}>
-          {/* Логотип слева */}
           <div className={styles.logoColumn}>
             <Link to="/">
               <img
@@ -49,7 +46,6 @@ const Footer = () => {
             </Link>
           </div>
 
-          {/* Центральная колонка с документами */}
           <div className={styles.documentsColumn}>
             <NavLink to="/public-offer" className={styles.documentLink}>
               Публичная оферта
@@ -59,7 +55,6 @@ const Footer = () => {
             </NavLink>
           </div>
 
-          {/* Правая колонка с навигацией */}
           <div className={styles.navColumn}>
             <NavLink to="/about" className={styles.navLink}>
               О компании

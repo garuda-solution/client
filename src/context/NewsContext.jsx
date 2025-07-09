@@ -12,10 +12,10 @@ export const NewsProvider = ({ children }) => {
   const fetchNews = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(API_URL + '/api/news', {
+      const response = await axios.get(API_URL + "/api/news", {
         params: { limit: 6 }, // Get 6 latest news for homepage
       });
-      console.log(response.data)
+      console.log(response.data);
       setNews(response.data);
       setError(null);
     } catch (err) {
