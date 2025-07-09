@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./Header.module.css";
 import ukFlag from "../../assets/usd-flag.svg";
 import ruFlag from "../../assets/ru-flag.svg";

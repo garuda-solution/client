@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 export const translations = {
   ru: {
     home: {
@@ -380,10 +382,39 @@ export const translations = {
   },
 };
 
-export const useTranslation = (lang = "ru") => {
-  return (key) => {
+export const useTranslation = (initialLang = "ru") => {
+  const [language, setLanguage] = useState(() => {
+    // Инициализируем язык из localStorage, если он там есть
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("language") || initialLang;
+    }
+    return initialLang;
+  });
+
+  // Функция для изменения языка
+  const changeLanguage = (newLanguage) => {
+    if (["ru", "en"].includes(newLanguage)) {
+      setLanguage(newLanguage);
+      localStorage.setItem("language", newLanguage);
+      window.location.reload();
+    }
+  };
+
+  // Слушаем изменения в localStorage для синхронизации между вкладками
+  useEffect(() => {
+    const handleStorageChange = (e) => {
+      if (e.key === "language") {
+        setLanguage(e.newValue || "ru");
+      }
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
+
+  const t = (key) => {
     const keys = key.split(".");
-    let result = translations[lang];
+    let result = translations[language];
 
     for (const k of keys) {
       result = result?.[k];
@@ -391,5 +422,11 @@ export const useTranslation = (lang = "ru") => {
     }
 
     return result;
+  };
+
+  return {
+    t,
+    language,
+    changeLanguage,
   };
 };

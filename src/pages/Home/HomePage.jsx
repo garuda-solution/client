@@ -1,8 +1,10 @@
 import styles from "./HomePage.module.css";
 import { useTranslation } from "../../i18n";
+import { useNews } from "../../context/NewsContext";
 
-const HomePage = ({ lang = "ru" }) => {
-  const t = useTranslation(lang);
+const HomePage = () => {
+  const { t } = useTranslation();
+  const { news, loading, error } = useNews();
 
   const partnersData = [
     {
@@ -27,16 +29,18 @@ const HomePage = ({ lang = "ru" }) => {
     },
   ];
 
-  const newsData = t("home.newsItems").map((item, index) => ({
+  const newsData = news?.map((item, index) => ({
     id: index + 1,
     title: item.title,
-    img: [
-      "https://rscf.ru/upload/resize_cache/iblock/a22/500_500_1/tocwoh0c7skihvs4pefcc0slsl0wwfkv.webp",
-      "https://rscf.ru/upload/resize_cache/iblock/d38/500_500_1/4wy6r9culekj1f9tj57angg6nww56a3m.jpg",
-      "https://cdn.iz.ru/sites/default/files/styles/900x506/public/news-2022-07/RIAN_8232294.HR_.ru%20copy.jpg?itok=UZYqdhvq",
-      "https://rscf.ru/upload/resize_cache/iblock/a22/500_500_1/tocwoh0c7skihvs4pefcc0slsl0wwfkv.webp",
-    ][index],
-    description: item.description,
+    img:
+      item?.image ||
+      [
+        "https://rscf.ru/upload/resize_cache/iblock/a22/500_500_1/tocwoh0c7skihvs4pefcc0slsl0wwfkv.webp",
+        "https://rscf.ru/upload/resize_cache/iblock/d38/500_500_1/4wy6r9culekj1f9tj57angg6nww56a3m.jpg",
+        "https://cdn.iz.ru/sites/default/files/styles/900x506/public/news-2022-07/RIAN_8232294.HR_.ru%20copy.jpg?itok=UZYqdhvq",
+        "https://rscf.ru/upload/resize_cache/iblock/a22/500_500_1/tocwoh0c7skihvs4pefcc0slsl0wwfkv.webp",
+      ][index % 4],
+    description: item?.description || t("home.newsItems.defaultDescription"),
   }));
 
   const partnersLogos = [
@@ -188,7 +192,7 @@ const HomePage = ({ lang = "ru" }) => {
         <h2 className={styles.sectionTitle}>{t("home.news")}</h2>
         <div className={styles.newsContainer}>
           {newsData.map((news) => (
-            <div key={news.id} className={styles.newsCard}>
+            <div key={news._id} className={styles.newsCard}>
               <div
                 className={styles.newsImage}
                 style={{ backgroundImage: `url(${news.img})` }}

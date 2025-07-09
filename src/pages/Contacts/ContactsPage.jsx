@@ -1,8 +1,8 @@
 import { useTranslation } from "../../i18n";
 import styles from "./ContactsPage.module.css";
 
-const ContactsPage = ({ lang = "ru" }) => {
-  const t = useTranslation(lang);
+const ContactsPage = () => {
+  const { t } = useTranslation();
 
   return (
     <div className={styles.container}>

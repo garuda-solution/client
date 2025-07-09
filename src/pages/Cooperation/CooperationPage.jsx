@@ -1,8 +1,8 @@
 import { useTranslation } from "../../i18n";
 import styles from "./CooperationPage.module.css";
 
-const CooperationPage = ({ lang = "ru" }) => {
-  const t = useTranslation(lang);
+const CooperationPage = () => {
+  const { t } = useTranslation();
 
   const cooperationBlocks = [
     {

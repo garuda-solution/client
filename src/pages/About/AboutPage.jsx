@@ -1,9 +1,8 @@
-import React from "react";
 import { useTranslation } from "../../i18n";
 import styles from "./AboutPage.module.css";
 
-const AboutPage = ({ lang = "ru" }) => {
-  const t = useTranslation(lang);
+const AboutPage = () => {
+  const { t } = useTranslation();
 
   const aboutData = {
     company: {

@@ -51,7 +51,7 @@
 .secondaryButton,
 .moreButton,
 .contactButton {
-    padding: 0.8rem 1.5rem;
+    padding: 1.1rem 2.5rem;
     border: none;
     border-radius: 45px;
     font-size: 1rem;
@@ -121,7 +121,7 @@
     transform: translateX(-50%);
     width: 90px;
     height: 90px;
-    background-color: #111a23;
+    background: linear-gradient(#456c8a, #4f7592);
     border-radius: 50%;
     z-index: 2;
     display: flex;
@@ -507,7 +507,7 @@
     position: relative;
     min-height: 800px;
     /* Увеличиваем высоту для абсолютного позиционирования карточек */
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto 3rem;
     padding: 0 2rem;
 }
@@ -527,12 +527,12 @@
 
 .competencyCard:nth-child(2) {
     top: 100px;
-    right: 100px;
+    right: 250px;
 }
 
 .competencyCard:nth-child(3) {
     top: 250px;
-    left: 350px;
+    left: 500px;
 }
 
 .competencyCard:nth-child(4) {
@@ -542,12 +542,12 @@
 
 .competencyCard:nth-child(5) {
     bottom: 100px;
-    left: 20px;
+    left: 120px;
 }
 
 .competencyCard:nth-child(6) {
     bottom: 50px;
-    right: 400px;
+    right: 500px;
 }
 
 .competencyImageWrapper {
@@ -585,18 +585,15 @@
 .competencyTitle {
     position: absolute;
     bottom: 20px;
-    left: 20px;
-    right: 20px;
+    left: 175px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    font-size: 28px;
+    font-size: 24px;
     color: #fff;
     text-align: left;
     line-height: 1.2;
-    display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    overflow: hidden;
     text-overflow: ellipsis;
 }
 

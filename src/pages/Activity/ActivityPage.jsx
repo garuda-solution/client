@@ -1,9 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { useTranslation } from "../../i18n";
 import styles from "./ActivityPage.module.css";
 
-const ActivityPage = ({ lang = "ru" }) => {
-  const t = useTranslation(lang);
+const ActivityPage = () => {
+  const { t } = useTranslation();
   const videoRefs = useRef([]);
 
   useEffect(() => {

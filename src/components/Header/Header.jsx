@@ -13,7 +13,7 @@ import { useTranslation } from "../../i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
-  const t = useTranslation("ru");
+  const { t, language, changeLanguage } = useTranslation();
   const [rates, setRates] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState("");
@@ -108,7 +108,7 @@ const Header = () => {
                 </ul>
               </nav>
               <div className={styles.rightHeaderContainer}>
-                <LanguageSwitcher lang={"ru"} setLang={() => alert()} />
+                <LanguageSwitcher lang={language} setLang={changeLanguage} />
                 <div className={styles.clockContainer}>
                   {/* <img src={clock} alt="clock" className={styles.clock} /> */}
                   <GlobeWidget time={currentTime} />
