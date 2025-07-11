@@ -1,11 +1,12 @@
 import styles from "./HomePage.module.css";
 import { useTranslation } from "../../i18n";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useNews } from "../../context/NewsContext";
 
 const HomePage = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { news, loading, error } = useNews();
   const [expandedNews, setExpandedNews] = useState({});
 
@@ -135,7 +136,7 @@ const HomePage = () => {
             </div>
           ))}
         </div>
-        <button className={styles.moreButton}>
+        <button className={styles.moreButton} onClick={() => navigate("about")}>
           {t("home.moreDetails")}
           <img src="/u_arrow-white.svg" alt="" className={styles.arrow} />
         </button>

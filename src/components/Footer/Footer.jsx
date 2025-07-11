@@ -3,8 +3,10 @@ import styles from "./Footer.module.css";
 import { Link, NavLink } from "react-router-dom";
 import { API_URL } from "../../utils/constants";
 import axios from "axios";
+import { useTranslation } from "../../i18n";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     position: "",
@@ -13,7 +15,7 @@ const Footer = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
+  const [submitStatus, setSubmitStatus] = useState(null);
   const [submitMessage, setSubmitMessage] = useState("");
 
   const handleInputChange = (e) => {
@@ -27,10 +29,9 @@ const Footer = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Валидация формы
     if (!formData.name || !formData.phone || !formData.email) {
       setSubmitStatus("error");
-      setSubmitMessage("Пожалуйста, заполните обязательные поля");
+      setSubmitMessage(t("footer.validationError"));
       return;
     }
 
@@ -47,10 +48,7 @@ const Footer = () => {
 
       if (response.status === 200) {
         setSubmitStatus("success");
-        setSubmitMessage(
-          "Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время."
-        );
-        // Очищаем форму после успешной отправки
+        setSubmitMessage(t("footer.successMessage"));
         setFormData({
           name: "",
           position: "",
@@ -58,14 +56,12 @@ const Footer = () => {
           email: "",
         });
       } else {
-        throw new Error("Ошибка при отправке формы");
+        throw new Error("Form submission error");
       }
     } catch (error) {
-      console.error("Ошибка при отправке формы:", error);
+      console.error("Form submission error:", error);
       setSubmitStatus("error");
-      setSubmitMessage(
-        "Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже."
-      );
+      setSubmitMessage(t("footer.errorMessage"));
     } finally {
       setIsSubmitting(false);
     }
@@ -76,24 +72,28 @@ const Footer = () => {
       <div id="contact-section" className={styles.topSection}>
         <div className={styles.container}>
           <div className={styles.contactInfo}>
-            <h3>Открыты к сотрудничеству и деловым предложениям</h3>
+            <h3>{t("footer.cooperationTitle")}</h3>
             <div className={styles.contactBlock}>
-              <span className={styles.contactLabel}>Связаться</span>
+              <span className={styles.contactLabel}>
+                {t("footer.contactLabel")}
+              </span>
               <p className={styles.contactValue}>+7 495 147 08 76</p>
             </div>
             <div className={styles.contactBlock}>
-              <span className={styles.contactLabel}>Вопросы и предложения</span>
+              <span className={styles.contactLabel}>
+                {t("footer.questionsLabel")}
+              </span>
               <p className={styles.contactValue}>main@garudasolution.ru</p>
             </div>
           </div>
 
           <div className={styles.contactForm}>
-            <h3>Обсудим ваш проект?</h3>
+            <h3>{t("footer.discussProject")}</h3>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="name"
-                placeholder="Ваше ФИО"
+                placeholder={t("footer.namePlaceholder")}
                 value={formData.name}
                 onChange={handleInputChange}
                 required
@@ -101,14 +101,14 @@ const Footer = () => {
               <input
                 type="text"
                 name="position"
-                placeholder="Должность и название компании"
+                placeholder={t("footer.positionPlaceholder")}
                 value={formData.position}
                 onChange={handleInputChange}
               />
               <input
                 type="tel"
                 name="phone"
-                placeholder="Телефон"
+                placeholder={t("footer.phonePlaceholder")}
                 value={formData.phone}
                 onChange={handleInputChange}
                 required
@@ -116,13 +116,25 @@ const Footer = () => {
               <input
                 type="email"
                 name="email"
-                placeholder="E-mail"
+                placeholder={t("footer.emailPlaceholder")}
                 value={formData.email}
                 onChange={handleInputChange}
                 required
               />
-              <button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Отправка..." : "Связаться с нами"}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={styles.submitButton}
+              >
+                {isSubmitting
+                  ? t("footer.submitting")
+                  : t("footer.submitButton")}
+
+                <img
+                  src="/arrow-right-blue.svg"
+                  alt=""
+                  className={styles.arrow}
+                />
               </button>
               {submitStatus && (
                 <p
@@ -137,7 +149,16 @@ const Footer = () => {
               )}
             </form>
             <p className={styles.privacy}>
-              Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности
+              {t("footer.privacyTextBeforeLink")}
+              <Link
+                to="/Политика_в_отношении_обработки_персональных_данных.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.privacyLink}
+              >
+                {t("footer.privacyPolicy")}
+              </Link>
+              {t("footer.privacyTextAfterLink")}
             </p>
           </div>
         </div>
@@ -160,26 +181,28 @@ const Footer = () => {
           </div>
 
           <div className={styles.documentsColumn}>
-            <NavLink to="/public-offer" className={styles.documentLink}>
-              Публичная оферта
-            </NavLink>
-            <NavLink to="/privacy-policy" className={styles.documentLink}>
-              Политика конфиденциальности
-            </NavLink>
+            <Link
+              to="/Политика_в_отношении_обработки_персональных_данных.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.documentLink}
+            >
+              {t("footer.privacyPolicy")}
+            </Link>
           </div>
 
           <div className={styles.navColumn}>
             <NavLink to="/about" className={styles.navLink}>
-              О компании
+              {t("header.navAbout")}
             </NavLink>
             <NavLink to="/activity" className={styles.navLink}>
-              Деятельность
+              {t("header.navActivity")}
             </NavLink>
             <NavLink to="/cooperation" className={styles.navLink}>
-              Сотрудничество
+              {t("header.navCooperation")}
             </NavLink>
             <NavLink to="/contacts" className={styles.navLink}>
-              Контакты
+              {t("header.navContacts")}
             </NavLink>
           </div>
         </div>

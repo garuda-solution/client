@@ -197,6 +197,33 @@ export const translations = {
       pageName: "Контакты",
       pageTitle: "Гаруда Солюшн",
     },
+    footer: {
+      cooperationTitle: "Открыты к сотрудничеству и деловым предложениям",
+      contactLabel: "Связаться",
+      questionsLabel: "Вопросы и предложения",
+      discussProject: "Обсудим ваш проект?",
+      namePlaceholder: "Ваше ФИО",
+      positionPlaceholder: "Должность и название компании",
+      phonePlaceholder: "Телефон",
+      emailPlaceholder: "E-mail",
+      submitButton: "Связаться с нами",
+      submitting: "Отправка...",
+      privacyTextBeforeLink: "Нажимая на кнопку, вы соглашаетесь с ",
+      privacyTextAfterLink: "",
+      privacyPolicy: "политикой конфиденциальности",
+      publicOffer: "Публичная оферта",
+      privacyPolicy: "Политика конфиденциальности",
+      successMessage:
+        "Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.",
+      errorMessage:
+        "Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.",
+      validationError: "Пожалуйста, заполните обязательные поля",
+      language: "Язык",
+      languages: {
+        ru: "Русский",
+        en: "English",
+      },
+    },
   },
   en: {
     header: {
@@ -278,9 +305,9 @@ export const translations = {
       keyServices: "Key Services",
       services: {
         marketAccess: {
-          title: "Market Access",
+          title: "Access to markets",
           description:
-            "We provide access to international markets and a quality network of counterparties to achieve commercial objectives",
+            "We provide access to international markets and a high-quality network of counterparties to implement commercial tasks",
         },
         businessSupport: {
           title: "Business Support",
@@ -290,38 +317,38 @@ export const translations = {
         research: {
           title: "Research and Analytics",
           description:
-            "We conduct sociological and industry research to support informed management decisions",
+            "We conduct sociological and industry research to make informed management decisions",
         },
         exportImport: {
           title: "Export/Import",
           description:
-            "We provide full support for export and import transactions of food, agricultural and other industry products",
+            "We provide full support for transactions of food, agricultural and other industry products",
         },
         businessMissions: {
-          title: "Business Missions",
+          title: "Business missions and  other individual solutions",
           description:
-            "Representative economic and industry forums with participation of market leaders in ICT, cybersecurity, trade and industry",
+            "Representative economic and industry forums with the participation of market leaders in the field of ICT, cybersecurity, trade and industry. The company acts as a partner of international economic forums and participates in the activities of Intergovernmental Commissions",
         },
       },
       cooperationDirections: "Cooperation Directions",
       cooperation: {
-        start: "START",
-        advancement: "ADVANCEMENT",
-        realization: "REALIZATION",
+        start: "Starting point",
+        advancement: "Promotion",
+        realization: "Implementation",
         businessMissions: "Business Missions",
         businessMissionsDescription:
-          "The company offers organization of business missions for its partners. We provide consulting and MICE support, including meeting planning, selection of local companies and logistics solutions",
-        directions: "Cooperation Directions",
+          "The company offers organization of business missions for our partners. We provide consulting and MICE support, including planning meetings, selection of local companies and dealing with logistics issues",
+        directions: "Cooperation areas",
         directionsDescription:
-          "Project management in various industries, product promotion in foreign markets. Interaction with key partners in industry and trade, offering comprehensive solutions and strategies to realize the Customer's business interests",
+          "Project management in various industries, product promotion in foreign markets. Interaction with key partners in industry and trade, offering comprehensive solutions and strategies to implement the Customer's business interests",
         exportImport: "Export/Import",
         exportImportDescription:
-          "We analyze trends, develop strategies, provide support at all stages. We implement a set of measures for successful foreign economic activity, interacting with reliable suppliers, ensuring quality and risk minimization",
+          "We analyze trends, develop strategies, provide support at all stages. We make for the successful implementation of foreign economic activity, interacting with reliable suppliers, ensuring quality and minimizing risks",
       },
       specializationTitle: "We Specialize In",
       specialization: {
         forums: "Forums and Business Missions",
-        exportImport: "Export and Import",
+        exportImport: "Export and import operations",
         itProjects: "IT Projects",
         tourism: "Tourism",
       },
@@ -331,7 +358,8 @@ export const translations = {
       pageTitle: "Garuda Solution",
       company: {
         title: "Company",
-        description: "A consulting organization with an extensive network of partners in Russia and abroad. We unite the efforts of business, public and political structures with the aim of successfully implementing projects of any complexity, and provide business support to partners' initiatives"
+        description:
+          "A consulting organization with an extensive network of partners in Russia and abroad. We unite the efforts of business, public and political structures with the aim of successfully implementing projects of any complexity, and provide business support to partners' initiatives",
       },
       positioning: {
         title: "Positioning",
@@ -356,7 +384,7 @@ export const translations = {
     },
     cooperation: {
       pageName: "Cooperation",
-      pageTitle: "Garuda Solution",
+      pageTitle: "with Garuda Solution",
       blocks: {
         consulting: {
           title: "International Business Consulting and Support",
@@ -394,6 +422,33 @@ export const translations = {
     contacts: {
       pageName: "Contacts",
       pageTitle: "with Garuda Solution",
+    },
+    footer: {
+      cooperationTitle: "Open to cooperation  and business proposals",
+      contactLabel: "Contact",
+      questionsLabel: "For questions and suggestions",
+      discussProject: "Let's discuss your project?",
+      namePlaceholder: "Your full name",
+      positionPlaceholder: "Position and company name",
+      phonePlaceholder: "Phone",
+      emailPlaceholder: "E-mail",
+      submitButton: "Contact us",
+      submitting: "Sending...",
+      privacyTextBeforeLink: "By clicking the button, you agree to the ",
+      privacyTextAfterLink: "",
+      privacyPolicy: "privacy policy",
+      publicOffer: "Public offer",
+      privacyPolicy: "Privacy policy",
+      successMessage:
+        "Thank you! Your message has been sent. We will contact you shortly.",
+      errorMessage:
+        "An error occurred while submitting the form. Please try again later.",
+      validationError: "Please fill in the required fields",
+      language: "Language",
+      languages: {
+        ru: "Russian",
+        en: "English",
+      },
     },
   },
 };

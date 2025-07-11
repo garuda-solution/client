@@ -30,9 +30,7 @@
     padding: 41px 31px;
     gap: 40px;
     background:
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        /* Затемняющий слой */
-        url('/map.png');
+        linear-gradient(rgb(0 0 0 / 10%), rgb(0 0 0 / 40%)), url(/map.png);
     background-size: cover;
     background-position: center;
     border-radius: 16px;
@@ -132,12 +130,15 @@
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.4s;
     margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
 }
 
 .contactForm button:hover {
-    background-color: #0052a3;
+    background-color: #486982;
     color: white;
 }
 
@@ -160,7 +161,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 90%;
     margin: 0 auto;
     padding: 0 20px;
     gap: 20px;
@@ -181,8 +182,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
     gap: 10px;
     min-width: 200px;
+    height: 100%;
 }
 
 .documentLink {
