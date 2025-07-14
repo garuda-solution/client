@@ -73,17 +73,19 @@ const Footer = () => {
         <div className={styles.container}>
           <div className={styles.contactInfo}>
             <h3>{t("footer.cooperationTitle")}</h3>
-            <div className={styles.contactBlock}>
-              <span className={styles.contactLabel}>
-                {t("footer.contactLabel")}
-              </span>
-              <p className={styles.contactValue}>+7 495 147 08 76</p>
-            </div>
-            <div className={styles.contactBlock}>
-              <span className={styles.contactLabel}>
-                {t("footer.questionsLabel")}
-              </span>
-              <p className={styles.contactValue}>main@garudasolution.ru</p>
+            <div>
+              <div className={styles.contactBlock}>
+                <span className={styles.contactLabel}>
+                  {t("footer.contactLabel")}
+                </span>
+                <p className={styles.contactValue}>+7 495 147 08 76</p>
+              </div>
+              <div className={styles.contactBlock}>
+                <span className={styles.contactLabel}>
+                  {t("footer.questionsLabel")}
+                </span>
+                <p className={styles.contactValue}>main@garudasolution.ru</p>
+              </div>
             </div>
           </div>
 

@@ -146,7 +146,7 @@ const HomePage = () => {
         <h2 className={styles.sectionTitle}>{t("home.forPartners")}</h2>
         <div className={styles.partnersWrapper}>
           <div className={styles.partnersGrid}>
-            {/* Первый ряд - смещен влево */}
+            {/* Первый ряд - теперь 3 карточки */}
             <div className={styles.partnersRow}>
               {partnersData.slice(0, 2).map((partner, index) => (
                 <div key={partner.id} className={styles.partnerCard}>
@@ -159,9 +159,23 @@ const HomePage = () => {
                   <p>{partner.description}</p>
                 </div>
               ))}
+              {/* Третий элемент первого ряда с кнопкой */}
+              <div className={`${styles.partnerCard} ${styles.buttonCard}`}>
+                  <button
+                    className={styles.contactButton}
+                    onClick={handleScrollToContacts}
+                  >
+                    {t("home.contactUs")}
+                    <img
+                      src="/arrow-right.svg"
+                      alt=""
+                      className={styles.arrow}
+                    />
+                  </button>
+              </div>
             </div>
 
-            {/* Второй ряд - смещен вправо */}
+            {/* Второй ряд - оставляем как было */}
             <div className={styles.partnersRow}>
               {partnersData.slice(2, 4).map((partner, index) => (
                 <div key={partner.id} className={styles.partnerCard}>
@@ -177,13 +191,6 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <button
-          className={styles.contactButton}
-          onClick={handleScrollToContacts}
-        >
-          {t("home.contactUs")}
-          <img src="/arrow-right.svg" alt="" className={styles.arrow} />
-        </button>
       </section>
 
       <section className={styles.trustSection}>

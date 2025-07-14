@@ -58,6 +58,9 @@
 .contactInfo {
     flex: 1;
     min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .contactInfo h3 {
@@ -68,19 +71,18 @@
     color: white;
 }
 
-.contactBlock {
+.contactBlock:first-of-type {
     margin-bottom: 15px;
 }
 
 .contactLabel {
     display: block;
-    font-size: 14px;
+    font-size: 15px;
     color: #BCBCBC;
-    margin-bottom: 5px;
 }
 
 .contactValue {
-    font-size: 16px;
+    font-size: 24px;
     color: white;
     margin: 0;
 }
