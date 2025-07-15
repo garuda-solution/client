@@ -21,7 +21,7 @@ body {
 }
 
 main {
-  min-height: calc(100vh - 400px);
+  /* min-height: calc(100vh - 400px); */
   /* Adjust based on your footer height */
   background-color: transparent;
 }

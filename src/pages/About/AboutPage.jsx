@@ -110,7 +110,7 @@ const AboutPage = () => {
             className={`${styles.photoContainer} ${
               photo.title ? styles.specialPhoto : ""
             }`}
-            style={{ height: `${photo.height}px`, marginTop: photo.marginTop ? "-48px" : "" }}
+            style={{ height: `${photo.height}px` }}
           >
             <img
               src={photo.src}
@@ -149,7 +149,7 @@ const AboutPage = () => {
             className={`${styles.photoContainer} ${
               photo.title ? styles.specialPhoto : ""
             }`}
-            style={{ height: `${photo.height}px`, marginTop: photo.marginTop ? "-48px" : "" }}
+            style={{ height: `${photo.height}px` }}
           >
             <img
               src={photo.src}

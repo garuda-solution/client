@@ -4,17 +4,27 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useNews } from "../../context/NewsContext";
 
+export const handleScrollToContacts = () => {
+  document.getElementById("contact-section")?.scrollIntoView({
+    behavior: "smooth",
+  });
+};
+
 const HomePage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { news, loading, error } = useNews();
   const [expandedNews, setExpandedNews] = useState({});
 
-  const handleScrollToContacts = () => {
-    document.getElementById("contact-section")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
+  const isMobile = window.innerWidth <= 768;
+  const newsData = (isMobile ? news.allFilteredNews : news.desktopNews)?.map(
+    (item, index) => ({
+      id: index + 1,
+      title: item.title,
+      img: item.image || fallbackImages[index % fallbackImages.length],
+      description: item.description || t("home.newsItems.defaultDescription"),
+    })
+  );
 
   const toggleNewsExpansion = (id) => {
     setExpandedNews((prev) => ({
@@ -46,20 +56,6 @@ const HomePage = () => {
     },
   ];
 
-  const newsData = news?.map((item, index) => ({
-    id: index + 1,
-    title: item.title,
-    img:
-      item?.image ||
-      [
-        "https://rscf.ru/upload/resize_cache/iblock/a22/500_500_1/tocwoh0c7skihvs4pefcc0slsl0wwfkv.webp",
-        "https://rscf.ru/upload/resize_cache/iblock/d38/500_500_1/4wy6r9culekj1f9tj57angg6nww56a3m.jpg",
-        "https://cdn.iz.ru/sites/default/files/styles/900x506/public/news-2022-07/RIAN_8232294.HR_.ru%20copy.jpg?itok=UZYqdhvq",
-        "https://rscf.ru/upload/resize_cache/iblock/a22/500_500_1/tocwoh0c7skihvs4pefcc0slsl0wwfkv.webp",
-      ][index % 4],
-    description: item?.description || t("home.newsItems.defaultDescription"),
-  }));
-
   const partnersLogos = [
     "space-travel.svg",
     "t8.svg",
@@ -85,6 +81,12 @@ const HomePage = () => {
 
   return (
     <div className={styles.container}>
+      <img
+        src="/home2.png"
+        alt="Фоновое изображение"
+        className={styles.heroImage}
+        loading="lazy"
+      />
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1>{t("home.title")}</h1>
@@ -128,10 +130,12 @@ const HomePage = () => {
                   alt={item}
                   className={styles.competencyImage}
                 />
-                <span className={styles.competencyNumber}>{`0${
-                  index + 1
-                }`}</span>
-                <h3 className={styles.competencyTitle}>{item}</h3>
+                <div className={styles.competenciesContentWrapper}>
+                  <span className={styles.competencyNumber}>{`0${
+                    index + 1
+                  }`}</span>
+                  <h3 className={styles.competencyTitle}>{item}</h3>
+                </div>
               </div>
             </div>
           ))}
@@ -161,17 +165,13 @@ const HomePage = () => {
               ))}
               {/* Третий элемент первого ряда с кнопкой */}
               <div className={`${styles.partnerCard} ${styles.buttonCard}`}>
-                  <button
-                    className={styles.contactButton}
-                    onClick={handleScrollToContacts}
-                  >
-                    {t("home.contactUs")}
-                    <img
-                      src="/arrow-right.svg"
-                      alt=""
-                      className={styles.arrow}
-                    />
-                  </button>
+                <button
+                  className={styles.contactButton}
+                  onClick={handleScrollToContacts}
+                >
+                  {t("home.contactUs")}
+                  <img src="/arrow-right.svg" alt="" className={styles.arrow} />
+                </button>
               </div>
             </div>
 

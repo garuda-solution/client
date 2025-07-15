@@ -117,6 +117,7 @@
     color: white;
     font-size: 16px;
     outline: none;
+    border-radius: 0;
 }
 
 .contactForm input::placeholder {
@@ -240,6 +241,7 @@
 
     .container {
         flex-direction: column;
+        padding: 41px 10px;
     }
 
     .contactInfo,
@@ -285,6 +287,7 @@
 
     .contactForm {
         padding: 20px;
+        width: 100%;
     }
 
     .logo {

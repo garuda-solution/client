@@ -1,13 +1,35 @@
 .container {
-    padding-top: 80px;
     color: white;
     background: linear-gradient(#0a0c10, #335673);
+    overflow: hidden;
+}
+
+.heroImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.1;
+    /* Прозрачность изображения */
+    z-index: 0;
+    top: 20px;
+    right: 5%;
+}
+
+.heroOverlay {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .hero {
     background-size: cover;
     background-position: center;
     height: 60vh;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -208,6 +230,10 @@
     filter: brightness(0.3);
 } */
 
+.competenciesContentWrapper {
+    max-width: 260px;
+}
+
 .competencyNumber {
     position: absolute;
     top: 20px;
@@ -223,9 +249,10 @@
     font-size: 24px;
     color: #fff;
     position: absolute;
-    top: 50%;
+    top: 130px;
     left: 50%;
     transform: translate(-50%);
+    width: 260px;
 }
 
 .partnersSection {
@@ -408,7 +435,7 @@
 }
 
 .newsCard {
-    min-width: 300px;
+    min-width: 360px;
     height: 450px;
     border-radius: 8px;
     overflow: hidden;
@@ -682,7 +709,7 @@
 
 .competencyCard:nth-child(4) {
     top: 350px;
-    right: 2%;
+    right: 120px;
 }
 
 .competencyCard:nth-child(5) {
@@ -726,8 +753,8 @@
 
 .competencyTitle {
     position: absolute;
-    bottom: 20px;
-    left: 175px;
+    top: 125px;
+    left: 215px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 24px;
@@ -1018,8 +1045,7 @@
     }
 }
 
-/* Адаптация для экранов <1300px */
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
     .competenciesSection {
         padding: 4rem 1rem;
     }
@@ -1027,18 +1053,19 @@
     .competenciesGrid {
         position: relative;
         width: auto;
-        max-width: 1260px;
+        max-width: 1380px;
         /* 610px * 2 + 40px gap */
         margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(2, 610px);
+        display: flex;
+        flex-wrap: wrap;
+        /* grid-template-columns: repeat(2, 610px); */
         gap: 40px;
         justify-content: center;
     }
 
     .competencyCard {
-        position: relative !important;
-        width: 610px !important;
+        position: static !important;
+        /* width: 610px !important; */
         height: 348px !important;
         top: auto !important;
         left: auto !important;
@@ -1064,75 +1091,133 @@
     }
 }
 
-/* Для мобильных экранов (<650px) */
-@media (max-width: 650px) {
+
+@media (max-width: 1400px) {
+    .competenciesSection {
+        padding: 4rem 1rem;
+    }
+
     .competenciesGrid {
         position: relative;
         width: 100%;
-        height: 2100px;
-        /* 348px * 6 карточек + отступы */
-        grid-template-columns: 1fr;
+        max-width: 1260px;
+        /* 610px * 2 + 40px gap */
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+
+    .competencyCard {
+        position: static;
+        width: 610px;
+        height: 348px;
+        margin: 0;
+        transform: none;
+    }
+
+    /* Центрируем кнопку */
+    .moreButton {
+        position: relative;
+        left: auto;
+        right: auto;
+        transform: none;
+        margin: 20px auto 0;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+
+@media (max-width: 1400px) {
+    .competenciesGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        min-height: auto;
         padding: 0 20px;
     }
 
     .competencyCard {
-        position: absolute !important;
-        width: calc(100% - 40px) !important;
+        position: static !important;
+        width: 100% !important;
         max-width: 610px;
-        height: calc((100vw - 40px) * 0.57) !important;
-        /* Сохраняем пропорции */
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        margin: 0 !important;
+        height: 348px !important;
+        margin: 0 auto !important;
+        overflow: hidden;
     }
 
-    /* Позиционируем каждую карточку по вертикали */
-    .competencyCard:nth-child(1) {
-        top: 0;
+    .competencyCard:nth-of-type(6) {
+        transform: none;
     }
 
-    .competencyCard:nth-child(2) {
-        top: calc((100vw - 40px) * 0.57 + 20px);
-    }
-
-    .competencyCard:nth-child(3) {
-        top: calc(((100vw - 40px) * 0.57 + 20px) * 2);
-    }
-
-    .competencyCard:nth-child(4) {
-        top: calc(((100vw - 40px) * 0.57 + 20px) * 3);
-    }
-
-    .competencyCard:nth-child(5) {
-        top: calc(((100vw - 40px) * 0.57 + 20px) * 4);
-    }
-
-    .competencyCard:nth-child(6) {
-        top: calc(((100vw - 40px) * 0.57 + 20px) * 5);
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-    }
-
-    /* Корректируем позиции номеров и текста */
-    .competencyNumber {
-        top: 30px !important;
-        right: 30px !important;
-        font-size: 24px !important;
-    }
-
-    .competencyTitle {
-        bottom: 30px !important;
-        left: 30px !important;
-        font-size: 18px !important;
-    }
-
-    /* Фиксируем кнопку */
     .moreButton {
-        position: absolute;
-        bottom: 0;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        width: calc(100% - 40px);
-        max-width: 610px;
+        grid-column: 1 / -1;
+        margin: 40px auto 0;
+    }
+}
+
+/* Зигзагообразное расположение для мобильных */
+@media (max-width: 768px) {
+    .competenciesGrid {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 0;
+    }
+
+    .competencyCard {
+        width: 100% !important;
+        height: 300px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Четные карточки смещаем вправо */
+    .competencyCard:nth-child(even) {
+        align-self: flex-end;
+        max-width: 100%;
+    }
+
+    /* Нечетные карточки смещаем влево */
+    .competencyCard:nth-child(odd) {
+        align-self: flex-start;
+        max-width: 90%;
+    }
+
+    .moreButton {
+        margin-top: 30px;
+        align-self: center;
+    }
+
+    .heroImage {
+        height: 85%;
+        top: 30px;
+        right: 50%;
+        transform: translateX(40%);
+    }
+}
+
+@media (max-width: 695px) {
+    .heroImage {
+        height: 60%;
+        top: 50px;
+        right: 50%;
+        transform: translateX(40%);
+    }
+}
+
+@media (max-width: 480px) {
+    .competencyCard {
+        height: 250px !important;
+    }
+
+    .heroImage {
+        height: 45%;
+        top: 50px;
+        right: 50%;
+        transform: translateX(43%);
     }
 }

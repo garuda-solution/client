@@ -9,14 +9,28 @@ export const NewsProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const filterAndLimitNews = (data) => {
+    const withImages = data.filter(
+      (item) => item.image && item.image.trim() !== ""
+    );
+    const mobileLimited = withImages.slice(0, 30);
+    const desktopLimited = mobileLimited.slice(0, 4);
+
+    return {
+      allFilteredNews: mobileLimited,
+      desktopNews: desktopLimited,
+    };
+  };
+
   const fetchNews = async () => {
     try {
       setLoading(true);
       const response = await axios.get(API_URL + "/api/news", {
-        params: { limit: 6 }, // Get 6 latest news for homepage
+        params: { limit: 40 },
       });
-      console.log(response.data);
-      setNews(response.data);
+      const processedNews = filterAndLimitNews(response.data);
+
+      setNews(processedNews);
       setError(null);
     } catch (err) {
       console.error("Error fetching news:", err);

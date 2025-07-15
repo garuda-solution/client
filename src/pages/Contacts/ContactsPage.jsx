@@ -7,10 +7,10 @@ const ContactsPage = () => {
   return (
     <div className={styles.container}>
       {/* Page Header */}
-      <section className={styles.pageHeader}>
+      {/* <section className={styles.pageHeader}>
         <span className={styles.pageTitle}>{t("contacts.pageName")}</span>
         <h2 className={styles.companyName}>{t("contacts.pageTitle")}</h2>
-      </section>
+      </section> */}
     </div>
   );
 };
