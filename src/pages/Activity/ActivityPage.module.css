@@ -310,6 +310,14 @@
         display: none;
     }
 
+    .phaseContainer {
+        padding-left: 0;
+    }
+
+    .phase {
+        padding-left: 0;
+    }
+
     .serviceCard {
         grid-column: span 1 !important;
         height: auto;
@@ -369,6 +377,7 @@
     .sectionTitle {
         font-size: 36px;
         margin-bottom: 2rem;
+        line-height: 2rem;
     }
 
     .specializationGrid {
@@ -382,6 +391,7 @@
 
     .cooperationText h3 {
         font-size: 28px;
+        line-height: 2rem;
     }
 
     .cooperationText p {

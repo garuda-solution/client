@@ -377,7 +377,7 @@
 
 .trustSection h2 {
     margin-bottom: 3rem;
-    color: #bfdcf9;
+    /* color: #bfdcf9; */
     font-size: 2.5rem;
 }
 
@@ -609,6 +609,7 @@
     .sectionTitle {
         padding: 0 2rem;
         font-size: 42px;
+        line-height: 2.5rem;
     }
 
     .aboutContent {
