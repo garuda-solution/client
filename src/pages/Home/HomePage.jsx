@@ -1,7 +1,7 @@
 import styles from "./HomePage.module.css";
 import { useTranslation } from "../../i18n";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNews } from "../../context/NewsContext";
 
 export const handleScrollToContacts = () => {
@@ -15,6 +15,186 @@ const HomePage = () => {
   const navigate = useNavigate();
   const { news, loading, error } = useNews();
   const [expandedNews, setExpandedNews] = useState({});
+
+  const partnersLinks = {
+    "/RF/Т8/t8-1.png": "https://t8.ru",
+    "/RF/Элвис-НеоТек/logo_102x.png": "https://elvis-neotech.ru",
+    "/RF/ЦентрИнформ/АО ЦентрИнформ-Photoroom.png": "https://fsrar.gov.ru",
+    "/RF/Спейс Тревел/logo_rebrand.svg": "https://space-travel.ru",
+    "/International/IDEA/2.png": "https://idea.int",
+    "/RF/Лузалес/logo1.png.webp": "https://luzales.ru",
+    "/RF/Код безопасности/Логотип_компании_Код_Безопасности_.svg.png":
+      "https://kb.ru",
+    "/RF/Деловая Азия/Деловая азия - лого - ru.svg": "https://delasia.ru",
+    "/International/Inyaland/InyaLand _ Accelerating technology innovations in Myanmar.avif":
+      "https://inyaland.com",
+    "/RF/Астра/logoGroupAstra/Astra-g-color_white.svg":
+      "https://astra-group.ru",
+    "/RF/Аквариус/Logo Eng/Logo_AQ-white.png": "https://aquarius.ru",
+    "/RF/RDW Computers/2023-05-16-2mqsr4-RDW-Logo-CMYK.png": "https://rdw.ru",
+    "/International/7th Computing/o9SXyF4kPWv_4nhtaCnNLF7UNW_ctaPmkL2rgynHdD1Z9500tJx02HGcQLDVJDgWQqKfoVKXOwo=.png":
+      "https://7thcomputing.com",
+    "/International/MDEA/409837576_754309663382003_7232258249357238228_n-Photoroom.png":
+      "https://mdea.org",
+  };
+
+  const partnersLogos = [
+    [
+      "/RF/Т8/t8-1.png",
+      "/RF/Элвис-НеоТек/logo_102x.png",
+      "/RF/ЦентрИнформ/АО ЦентрИнформ-Photoroom.png",
+      "/RF/Спейс Тревел/logo_rebrand.svg",
+    ],
+    [
+      "/International/IDEA/2.png",
+      "/RF/Лузалес/logo1.png.webp",
+      "/RF/Код безопасности/Логотип_компании_Код_Безопасности_.svg.png",
+    ],
+    [
+      "/RF/Деловая Азия/Деловая азия - лого - ru.svg",
+      "/International/Inyaland/InyaLand _ Accelerating technology innovations in Myanmar.avif",
+      "/RF/Астра/logoGroupAstra/Astra-g-color_white.svg",
+      "/RF/Аквариус/Logo Eng/Logo_AQ-white.png",
+    ],
+  ];
+
+  const partnersLogos2 = [
+    [
+      "/RF/RDW Computers/2023-05-16-2mqsr4-RDW-Logo-CMYK.png",
+      "/International/7th Computing/o9SXyF4kPWv_4nhtaCnNLF7UNW_ctaPmkL2rgynHdD1Z9500tJx02HGcQLDVJDgWQqKfoVKXOwo=.png",
+      "/International/MDEA/409837576_754309663382003_7232258249357238228_n-Photoroom.png",
+      "/RF/Т8/t8-1.png",
+    ],
+    [
+      "/RF/Элвис-НеоТек/logo_102x.png",
+      "/RF/ЦентрИнформ/АО ЦентрИнформ-Photoroom.png",
+      "/RF/Спейс Тревел/logo_rebrand.svg",
+    ],
+    [
+      "/International/IDEA/2.png",
+      "/RF/Лузалес/logo1.png.webp",
+      "/RF/Код безопасности/Логотип_компании_Код_Безопасности_.svg.png",
+      "/RF/Деловая Азия/Деловая азия - лого - ru.svg",
+    ],
+  ];
+
+  const createSlidesForViewport = () => {
+    const isMobile = window.innerWidth <= 768;
+    const isTablet = window.innerWidth <= 1200;
+
+    if (isMobile) {
+      // Для мобильных - 2 логотипа в ряду, 3 ряда = 6 логотипов на слайд
+      return [
+        [
+          ["/RF/Т8/t8-1.png", "/RF/Элвис-НеоТек/logo_102x.png"],
+          [
+            "/RF/ЦентрИнформ/АО ЦентрИнформ-Photoroom.png",
+            "/RF/Спейс Тревел/logo_rebrand.svg",
+          ],
+          ["/International/IDEA/2.png", "/RF/Лузалес/logo1.png.webp"],
+        ],
+        [
+          [
+            "/RF/Код безопасности/Логотип_компании_Код_Безопасности_.svg.png",
+            "/RF/Деловая Азия/Деловая азия - лого - ru.svg",
+          ],
+          [
+            "/International/Inyaland/InyaLand _ Accelerating technology innovations in Myanmar.avif",
+            "/RF/Астра/logoGroupAstra/Astra-g-color_white.svg",
+          ],
+          [
+            "/RF/Аквариус/Logo Eng/Logo_AQ-white.png",
+            "/RF/RDW Computers/2023-05-16-2mqsr4-RDW-Logo-CMYK.png",
+          ],
+        ],
+        [
+          [
+            "/International/7th Computing/o9SXyF4kPWv_4nhtaCnNLF7UNW_ctaPmkL2rgynHdD1Z9500tJx02HGcQLDVJDgWQqKfoVKXOwo=.png",
+            "/International/MDEA/409837576_754309663382003_7232258249357238228_n-Photoroom.png",
+          ],
+          ["/RF/Т8/t8-1.png", "/RF/Элвис-НеоТек/logo_102x.png"],
+          [
+            "/RF/ЦентрИнформ/АО ЦентрИнформ-Photoroom.png",
+            "/RF/Спейс Тревел/logo_rebrand.svg",
+          ],
+        ],
+      ];
+    } else if (isTablet) {
+      // Для планшетов - 3 логотипа в ряду, 2 ряда = 6 логотипов на слайд
+      return [
+        [
+          [
+            "/RF/Т8/t8-1.png",
+            "/RF/Элвис-НеоТек/logo_102x.png",
+            "/RF/ЦентрИнформ/АО ЦентрИнформ-Photoroom.png",
+          ],
+          [
+            "/RF/Спейс Тревел/logo_rebrand.svg",
+            "/International/IDEA/2.png",
+            "/RF/Лузалес/logo1.png.webp",
+          ],
+        ],
+        [
+          [
+            "/RF/Код безопасности/Логотип_компании_Код_Безопасности_.svg.png",
+            "/RF/Деловая Азия/Деловая азия - лого - ru.svg",
+            "/International/Inyaland/InyaLand _ Accelerating technology innovations in Myanmar.avif",
+          ],
+          [
+            "/RF/Астра/logoGroupAstra/Astra-g-color_white.svg",
+            "/RF/Аквариус/Logo Eng/Logo_AQ-white.png",
+            "/RF/RDW Computers/2023-05-16-2mqsr4-RDW-Logo-CMYK.png",
+          ],
+        ],
+        [
+          [
+            "/International/7th Computing/o9SXyF4kPWv_4nhtaCnNLF7UNW_ctaPmkL2rgynHdD1Z9500tJx02HGcQLDVJDgWQqKfoVKXOwo=.png",
+            "/International/MDEA/409837576_754309663382003_7232258249357238228_n-Photoroom.png",
+            "/RF/Т8/t8-1.png",
+          ],
+          [
+            "/RF/Элвис-НеоТек/logo_102x.png",
+            "/RF/ЦентрИнформ/АО ЦентрИнформ-Photoroom.png",
+            "/RF/Спейс Тревел/logo_rebrand.svg",
+          ],
+        ],
+      ];
+    }
+
+    return [partnersLogos, partnersLogos2];
+  };
+
+  const [allSlides, setAllSlides] = useState([partnersLogos, partnersLogos2]);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [slidesToShow, setSlidesToShow] = useState(1);
+  const [transitionDirection, setTransitionDirection] = useState("next");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        // Mobile
+        setSlidesToShow(3); // 2 логотипа в ряду × 3 ряда
+      } else if (window.innerWidth <= 1200) {
+        // Tablet
+        setSlidesToShow(2); // 3 логотипа в ряду × 2 ряда
+      } else {
+        // Desktop
+        setSlidesToShow(1); // Оригинальные слайды
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTransitionDirection("next");
+      setCurrentSlide((prev) => (prev + 1) % allSlides.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const isMobile = window.innerWidth <= 768;
   const newsData = (isMobile ? news.allFilteredNews : news.desktopNews)?.map(
@@ -54,20 +234,6 @@ const HomePage = () => {
       title: t("home.partners.tourism.title"),
       description: t("home.partners.tourism.description"),
     },
-  ];
-
-  const partnersLogos = [
-    "space-travel.svg",
-    "t8.svg",
-    "heotek.svg",
-    "rdw.svg",
-    "inform.svg",
-    "delovaya-azia.svg",
-    "idea.svg",
-    "aquarius.svg",
-    "astra.svg",
-    "kod-bezopasnosti.svg",
-    "luzales.svg",
   ];
 
   const competenciesImages = [
@@ -195,37 +361,45 @@ const HomePage = () => {
 
       <section className={styles.trustSection}>
         <h2 className={styles.sectionTitle}>{t("home.trustUs")}</h2>
-        <div className={styles.trustLogos}>
-          <div className={styles.logosRow}>
-            {partnersLogos.slice(0, 4).map((logo, index) => (
-              <div key={index} className={styles.trustLogo}>
-                <img
-                  src={`/partners/${logo}`}
-                  alt={`Partner ${index + 1}`}
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-          <div className={styles.logosRow}>
-            {partnersLogos.slice(4, 7).map((logo, index) => (
-              <div key={index + 4} className={styles.trustLogo}>
-                <img
-                  src={`/partners/${logo}`}
-                  alt={`Partner ${index + 5}`}
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-          <div className={styles.logosRow}>
-            {partnersLogos.slice(7, 11).map((logo, index) => (
-              <div key={index + 7} className={styles.trustLogo}>
-                <img
-                  src={`/partners/${logo}`}
-                  alt={`Partner ${index + 8}`}
-                  loading="lazy"
-                />
+        <div className={styles.trustCarousel}>
+          <div className={styles.slidesContainer}>
+            {allSlides.map((slide, index) => (
+              <div
+                key={index}
+                className={`
+                ${styles.slide} 
+                ${index === currentSlide ? styles.active : ""}
+                ${
+                  index === (currentSlide + 1) % allSlides.length
+                    ? styles.next
+                    : ""
+                }
+              `}
+                data-direction={transitionDirection}
+              >
+                {slide.map((row, rowIndex) => (
+                  <div
+                    key={rowIndex}
+                    className={`${styles.logosRow} ${
+                      rowIndex === 1 ? styles.centerRow : ""
+                    }`}
+                  >
+                    {row.map((logo, logoIndex) => (
+                      <Link
+                        target="_blank"
+                        to={partnersLinks[logo] || "#"}
+                        key={logoIndex}
+                        className={styles.trustLogo}
+                      >
+                        <img
+                          src={`/partners/logos${logo}`}
+                          alt={`Partner logo`}
+                          loading="lazy"
+                        />
+                      </Link>
+                    ))}
+                  </div>
+                ))}
               </div>
             ))}
           </div>

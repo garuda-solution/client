@@ -18,7 +18,7 @@ const Header = () => {
   const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isMobile = useMediaQuery({ maxWidth: 1024 });
+  const isMobile = useMediaQuery({ maxWidth: 1204 });
 
   useEffect(() => {
     const updateMoscowTime = () => {

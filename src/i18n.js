@@ -29,7 +29,7 @@ export const translations = {
         forums: {
           title: "Форумы и бизнес-миссии",
           description:
-            "Представительные экономические и отраслевые форумы с участием лидеров рынка в области ИКТ, кибербезопасности, торговли и промышленности.",
+            "Представительные экономические и отраслевые форумы с участием лидеров рынка в области ИКТ, кибербезопасности, торговли и промышленности",
         },
         export: {
           title: "Экспорт и импорт",
@@ -39,12 +39,12 @@ export const translations = {
         it: {
           title: "IT проекты",
           description:
-            "Успешные проекты по выходу российских вендоров на зарубежные рынки с проведением анализа целевой аудитории.",
+            "Успешные проекты по выходу российских вендоров на зарубежные рынки с проведением анализа целевой аудитории",
         },
         tourism: {
           title: "Туризм",
           description:
-            "Содействуем развитию деятельности российских игроков на новых рынках, предоставляем комплексную поддержку.",
+            "Содействуем развитию деятельности российских игроков на новых рынках, предоставляем комплексную поддержку",
         },
       },
       contactUs: "Связаться с нами",
@@ -148,7 +148,7 @@ export const translations = {
         paragraphs: [
           "Поддерживать рост и развитие совместных проектных-инициатив. Предлагать комплексные решения для достижения ключевых целей и задач Вашего бизнеса",
           "Используем глубокое понимание рынков, административные ресурсы и возможности для развития",
-          "Наша цель—поддерживать стратегическое сотрудничество в различных секторах экономики, способствуя устойчивому развитию деловых игроков",
+          "Наша цель – поддерживать стратегическое сотрудничество в различных секторах экономики, способствуя устойчивому развитию деловых игроков",
         ],
       },
       photos: {
@@ -253,7 +253,7 @@ export const translations = {
         forums: {
           title: "Forums and business missions",
           description:
-            "Representative economic and industry forums with participation of market leaders in ICT, cybersecurity, trade and industry.",
+            "Representative economic and industry forums with participation of market leaders in ICT, cybersecurity, trade and industry",
         },
         export: {
           title: "Export and import",
@@ -263,12 +263,12 @@ export const translations = {
         it: {
           title: "IT projects",
           description:
-            "Successful projects for Russian vendors entering foreign markets with target audience analysis.",
+            "Successful projects for Russian vendors entering foreign markets with target audience analysis",
         },
         tourism: {
           title: "Tourism",
           description:
-            "We support the development of Russian players in new markets, providing comprehensive support.",
+            "We support the development of Russian players in new markets, providing comprehensive support",
         },
       },
       contactUs: "Contact us",
@@ -424,7 +424,7 @@ export const translations = {
       pageTitle: "with Garuda Solution",
     },
     footer: {
-      cooperationTitle: "Open to cooperation  and business proposals",
+      cooperationTitle: "Open to cooperation and business proposals",
       contactLabel: "Contact",
       questionsLabel: "For questions and suggestions",
       discussProject: "Let's discuss your project?",

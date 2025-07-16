@@ -12,6 +12,7 @@
     align-items: center;
     margin: 0 auto;
     padding: 1rem 8rem;
+    padding-left: 4rem;
     height: 100%;
 }
 
@@ -20,7 +21,7 @@
 }
 
 .logoImage {
-    height: 85px;
+    height: 145px;
     width: auto;
     transition: height 0.3s ease;
 }
@@ -243,25 +244,25 @@ nav {
 
 @media (max-width: 1440px) {
     .container {
-        padding: 1rem 4rem;
+        padding: 1rem 5rem;
     }
 
     .logoImage {
-        height: 80px;
+        height: 140px;
     }
 }
 
 @media (max-width: 1200px) {
     .container {
-        padding: 1rem 2rem;
+        padding: 1rem 4rem;
     }
 
     .logoImage {
-        height: 75px;
+        height: 135px;
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1204px) {
     .container {
         padding: 1rem 2rem;
     }
@@ -272,11 +273,11 @@ nav {
     }
 
     .logoImage {
-        height: 70px;
+        height: 130px;
     }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1204px) {
     .burgerButton {
         display: none;
     }
@@ -288,7 +289,7 @@ nav {
     }
 
     .logoImage {
-        height: 65px;
+        height: 125px;
     }
 
     .mobileMenuContent {
@@ -311,7 +312,7 @@ nav {
     }
 
     .logoImage {
-        height: 60px;
+        height: 100px;
     }
 }
 
@@ -397,12 +398,6 @@ nav {
     font-size: 16px;
 }
 
-@media (max-width: 1024px) {
-    .languageSwitcher {
-        margin-right: 10px;
-    }
-}
-
 
 .languageSwitcher {
     display: flex;
@@ -457,9 +452,9 @@ nav {
     height: 21px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1440px) {
     .languageSwitcher {
-        margin-right: 10px;
+        margin-right: 0;
     }
 }
 

@@ -7,14 +7,19 @@ const ActivityPage = () => {
   const videoRefs = useRef([]);
 
   useEffect(() => {
-    videoRefs.current.forEach((video) => {
-      video.addEventListener("mouseenter", () => video.play());
-      video.addEventListener("mouseleave", () => {
-        video.pause();
-        video.currentTime = 0;
-      });
+  videoRefs.current.forEach((video) => {
+    video.play().then(() => {
+      video.pause();
+      video.currentTime = 0;
+    }).catch(e => console.error("Video play error:", e));
+    
+    video.addEventListener("mouseenter", () => video.play());
+    video.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0;
     });
-  }, []);
+  });
+}, []);
 
   const servicesData = [
     {
@@ -73,21 +78,25 @@ const ActivityPage = () => {
       id: 1,
       title: t("activity.specialization.forums"),
       video: "/videos/forums.mp4",
+      poster: "/images/forums-poster.jpg"
     },
     {
       id: 2,
       title: t("activity.specialization.exportImport"),
       video: "/videos/export.mp4",
+      poster: "/images/plane.png"
     },
     {
       id: 3,
       title: t("activity.specialization.itProjects"),
       video: "/videos/it.mp4",
+      poster: "/images/forums-poster.jpg"
     },
     {
       id: 4,
       title: t("activity.specialization.tourism"),
       video: "/videos/tourism.mp4",
+      poster: "/images/forums-poster.jpg"
     },
   ];
 

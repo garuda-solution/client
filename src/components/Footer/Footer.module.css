@@ -176,8 +176,8 @@
 }
 
 .logo {
-    width: 153px;
-    height: auto;
+    height: 153px;
+    width: auto;
 }
 
 .documentsColumn {
@@ -288,10 +288,6 @@
     .contactForm {
         padding: 20px;
         width: 100%;
-    }
-
-    .logo {
-        width: 120px;
     }
 }
 
