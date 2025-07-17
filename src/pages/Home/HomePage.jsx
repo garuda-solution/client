@@ -53,6 +53,7 @@ const HomePage = () => {
       "https://commerce.gov.mm",
     "/International/Минпром Мьянмы/MOPFI_Logo.png":
       "https://www.industry.gov.mm",
+    "/International/MOTC LOGO NEW-Photoroom.png": "https://www.motc.gov.mm",
   };
 
   const partnersLogos = [
@@ -110,7 +111,7 @@ const HomePage = () => {
     [
       "/International/Минтуризм Мьянмы/Logo_of_the_Ministry_of_Hotels_&_Tourism_(Burma).svg.png",
       "/International/Минфин Мьянмы/MOPF 2 line s copy (1)_0.png",
-      "/International/MDEA/409837576_754309663382003_7232258249357238228_n-Photoroom.png",
+      "/International/MOTC LOGO NEW-Photoroom.png",
       "/International/МИФЕР/MIFER_Logo-Photoroom.png",
     ],
   ];
