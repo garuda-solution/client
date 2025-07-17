@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { API_URL } from "../utils/constants";
+import { useTranslation } from "../i18n";
 
 const NewsContext = createContext();
 
@@ -8,6 +9,7 @@ export const NewsProvider = ({ children }) => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { language } = useTranslation();
 
   const filterAndLimitNews = (data) => {
     const withImages = data.filter(
@@ -26,7 +28,7 @@ export const NewsProvider = ({ children }) => {
     try {
       setLoading(true);
       const response = await axios.get(API_URL + "/api/news", {
-        params: { limit: 40 },
+        params: { limit: 40, language },
       });
       const processedNews = filterAndLimitNews(response.data);
 

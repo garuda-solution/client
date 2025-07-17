@@ -526,6 +526,12 @@
     color: #E0DCD9;
 }
 
+@media (max-width: 1500px) {
+    .newsContainer {
+        justify-content: flex-start;
+    }
+}
+
 @media (max-width: 1200px) {
     .sectionTitle {
         padding: 0 4rem;
