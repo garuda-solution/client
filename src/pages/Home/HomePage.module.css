@@ -1254,25 +1254,52 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    transition: transform 0.8s ease;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    opacity: 0;
 }
 
 .slide.active {
     transform: translateX(0);
-    z-index: 2;
+    opacity: 1;
+    z-index: 3;
 }
 
 .slide.next {
     transform: translateX(100%);
+    opacity: 0;
+    z-index: 2;
+}
+
+.slide.prev {
+    transform: translateX(-100%);
+    opacity: 0;
     z-index: 1;
 }
 
+/* Анимации для перехода вперед */
 .slide.active[data-direction="next"] {
     animation: slideInFromRight 0.8s forwards;
 }
 
 .slide.next[data-direction="next"] {
     animation: slideOutToLeft 0.8s forwards;
+}
+
+.slide.prev[data-direction="next"] {
+    animation: slideOutToLeft 0.8s forwards;
+}
+
+/* Анимации для перехода назад */
+.slide.active[data-direction="prev"] {
+    animation: slideInFromLeft 0.8s forwards;
+}
+
+.slide.next[data-direction="prev"] {
+    animation: slideOutToRight 0.8s forwards;
+}
+
+.slide.prev[data-direction="prev"] {
+    animation: slideOutToRight 0.8s forwards;
 }
 
 @keyframes slideInFromRight {
@@ -1299,7 +1326,31 @@
     }
 }
 
-/* Остальные стили оставляем как были */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Остальные стили остаются без изменений */
 .logosRow {
     display: flex;
     justify-content: center;

@@ -25,7 +25,7 @@ const HomePage = () => {
     "/RF/Лузалес/logo1.png.webp": "https://luzales.ru",
     "/RF/Код безопасности/Логотип_компании_Код_Безопасности_.svg.png":
       "https://www.securitycode.ru",
-    "/RF/Деловая Азия/Деловая азия - лого - ru.svg": "https://delasia.ru",
+    "/RF/Деловая Азия/Деловая азия - лого - ru.svg": "#",
     "/International/Inyaland/InyaLand _ Accelerating technology innovations in Myanmar.avif":
       "https://www.inyaland.com",
     "/RF/Астра/logoGroupAstra/Astra-g-color_white.svg": "https://astra.ru",
@@ -36,6 +36,23 @@ const HomePage = () => {
       "https://www.7thcomputing.com",
     "/International/MDEA/409837576_754309663382003_7232258249357238228_n-Photoroom.png":
       "https://www.mdea.org.mm",
+    "/International/Mytel/The_Mytel_Logo-Photoroom.png":
+      "https://mytel.com.mm/#/",
+    "/International/Ponontle Business Solutions/PONONTLE-GROUP.png":
+      "https://ponontle.co.za",
+    "/International/UAB/UAB-New-Logo-.-e1736415840696-Photoroom.png":
+      "https://www.uab.com.mm",
+    "/International/Ассоциация дружбы/logo.png": "http://mrfa.info",
+    "/International/МИФЕР/MIFER_Logo-Photoroom.png": "https://mifer.gov.mm/en",
+    "/International/UMFCCI/umfcci-logo.png": "https://www.umfcci.com.mm",
+    "/International/Минфин Мьянмы/MOPF 2 line s copy (1)_0.png":
+      "https://www.mopf.gov.mm",
+    "/International/Минтуризм Мьянмы/Logo_of_the_Ministry_of_Hotels_&_Tourism_(Burma).svg.png":
+      "https://www.tourism.gov.mm",
+    "/International/Минторг Мьянмы/commerce_logo_sep (1).png":
+      "https://commerce.gov.mm",
+    "/International/Минпром Мьянмы/MOPFI_Logo.png":
+      "https://www.industry.gov.mm",
   };
 
   const partnersLogos = [
@@ -78,6 +95,26 @@ const HomePage = () => {
     ],
   ];
 
+  const partnersLogos3 = [
+    [
+      "/International/Mytel/The_Mytel_Logo-Photoroom.png",
+      "/International/Ponontle Business Solutions/PONONTLE-GROUP.png",
+      "/International/UAB/UAB-New-Logo-.-e1736415840696-Photoroom.png",
+      "/International/UMFCCI/umfcci-logo.png",
+    ],
+    [
+      "/International/Ассоциация дружбы/logo.png",
+      "/International/Минпром Мьянмы/MOPFI_Logo.png",
+      "/International/Минторг Мьянмы/commerce_logo_sep (1).png",
+    ],
+    [
+      "/International/Минтуризм Мьянмы/Logo_of_the_Ministry_of_Hotels_&_Tourism_(Burma).svg.png",
+      "/International/Минфин Мьянмы/MOPF 2 line s copy (1)_0.png",
+      "/International/MDEA/409837576_754309663382003_7232258249357238228_n-Photoroom.png",
+      "/International/МИФЕР/MIFER_Logo-Photoroom.png",
+    ],
+  ];
+
   const createSlidesForViewport = () => {
     const isMobile = window.innerWidth <= 768;
     const isTablet = window.innerWidth <= 1200;
@@ -112,10 +149,27 @@ const HomePage = () => {
             "/International/7th Computing/o9SXyF4kPWv_4nhtaCnNLF7UNW_ctaPmkL2rgynHdD1Z9500tJx02HGcQLDVJDgWQqKfoVKXOwo=.png",
             "/International/MDEA/409837576_754309663382003_7232258249357238228_n-Photoroom.png",
           ],
-          ["/RF/Т8/t8-1.png", "/RF/Элвис-НеоТек/logo_102x.png"],
           [
-            "/RF/ЦентрИнформ/АО ЦентрИнформ-Photoroom.png",
-            "/RF/Спейс Тревел/logo_rebrand.svg",
+            "/International/NewPartner1/logo1.png",
+            "/International/NewPartner2/logo2.png",
+          ],
+          [
+            "/International/NewPartner3/logo3.png",
+            "/International/NewPartner4/logo4.png",
+          ],
+        ],
+        [
+          [
+            "/International/NewPartner5/logo5.png",
+            "/International/NewPartner6/logo6.png",
+          ],
+          [
+            "/International/NewPartner7/logo7.png",
+            "/International/NewPartner8/logo8.png",
+          ],
+          [
+            "/International/NewPartner9/logo9.png",
+            "/International/NewPartner10/logo10.png",
           ],
         ],
       ];
@@ -150,21 +204,38 @@ const HomePage = () => {
           [
             "/International/7th Computing/o9SXyF4kPWv_4nhtaCnNLF7UNW_ctaPmkL2rgynHdD1Z9500tJx02HGcQLDVJDgWQqKfoVKXOwo=.png",
             "/International/MDEA/409837576_754309663382003_7232258249357238228_n-Photoroom.png",
-            "/RF/Т8/t8-1.png",
+            "/International/NewPartner1/logo1.png",
           ],
           [
-            "/RF/Элвис-НеоТек/logo_102x.png",
-            "/RF/ЦентрИнформ/АО ЦентрИнформ-Photoroom.png",
-            "/RF/Спейс Тревел/logo_rebrand.svg",
+            "/International/NewPartner2/logo2.png",
+            "/International/NewPartner3/logo3.png",
+            "/International/NewPartner4/logo4.png",
+          ],
+        ],
+        [
+          [
+            "/International/NewPartner5/logo5.png",
+            "/International/NewPartner6/logo6.png",
+            "/International/NewPartner7/logo7.png",
+          ],
+          [
+            "/International/NewPartner8/logo8.png",
+            "/International/NewPartner9/logo9.png",
+            "/International/NewPartner10/logo10.png",
           ],
         ],
       ];
     }
 
-    return [partnersLogos, partnersLogos2];
+    // Для десктопной версии возвращаем все три слайда
+    return [partnersLogos, partnersLogos2, partnersLogos3];
   };
 
-  const [allSlides, setAllSlides] = useState([partnersLogos, partnersLogos2]);
+  const [allSlides, setAllSlides] = useState([
+    partnersLogos,
+    partnersLogos2,
+    partnersLogos3,
+  ]);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(1);
   const [transitionDirection, setTransitionDirection] = useState("next");
@@ -194,7 +265,16 @@ const HomePage = () => {
       setCurrentSlide((prev) => (prev + 1) % allSlides.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [allSlides.length]);
+
+  useEffect(() => {
+    console.log(
+      "Current slide:",
+      currentSlide,
+      "Total slides:",
+      allSlides.length
+    );
+  }, [currentSlide, allSlides.length]);
 
   const isMobile = window.innerWidth <= 768;
   const newsData = (isMobile ? news.allFilteredNews : news.desktopNews)?.map(
@@ -363,45 +443,46 @@ const HomePage = () => {
         <h2 className={styles.sectionTitle}>{t("home.trustUs")}</h2>
         <div className={styles.trustCarousel}>
           <div className={styles.slidesContainer}>
-            {allSlides.map((slide, index) => (
-              <div
-                key={index}
-                className={`
-                ${styles.slide} 
-                ${index === currentSlide ? styles.active : ""}
-                ${
-                  index === (currentSlide + 1) % allSlides.length
-                    ? styles.next
-                    : ""
-                }
-              `}
-                data-direction={transitionDirection}
-              >
-                {slide.map((row, rowIndex) => (
-                  <div
-                    key={rowIndex}
-                    className={`${styles.logosRow} ${
-                      rowIndex === 1 ? styles.centerRow : ""
-                    }`}
-                  >
-                    {row.map((logo, logoIndex) => (
-                      <Link
-                        target="_blank"
-                        to={partnersLinks[logo] || "#"}
-                        key={logoIndex}
-                        className={styles.trustLogo}
-                      >
-                        <img
-                          src={`/partners/logos${logo}`}
-                          alt={`Partner logo`}
-                          loading="lazy"
-                        />
-                      </Link>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            ))}
+            {allSlides.map((slide, index) => {
+              const slideClass =
+                index === currentSlide
+                  ? styles.active
+                  : index === (currentSlide + 1) % allSlides.length
+                  ? styles.next
+                  : styles.prev;
+
+              return (
+                <div
+                  key={index}
+                  className={`${styles.slide} ${slideClass}`}
+                  data-direction={transitionDirection}
+                >
+                  {slide.map((row, rowIndex) => (
+                    <div
+                      key={rowIndex}
+                      className={`${styles.logosRow} ${
+                        rowIndex === 1 ? styles.centerRow : ""
+                      }`}
+                    >
+                      {row.map((logo, logoIndex) => (
+                        <Link
+                          target="_blank"
+                          to={partnersLinks[logo] || "#"}
+                          key={logoIndex}
+                          className={styles.trustLogo}
+                        >
+                          <img
+                            src={`/partners/logos${logo}`}
+                            alt={`Partner logo`}
+                            loading="lazy"
+                          />
+                        </Link>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
