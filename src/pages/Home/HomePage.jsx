@@ -18,24 +18,24 @@ const HomePage = () => {
 
   const partnersLinks = {
     "/RF/Т8/t8-1.png": "https://t8.ru",
-    "/RF/Элвис-НеоТек/logo_102x.png": "https://elvis-neotech.ru",
-    "/RF/ЦентрИнформ/АО ЦентрИнформ-Photoroom.png": "https://fsrar.gov.ru",
+    "/RF/Элвис-НеоТек/logo_102x.png": "https://www.elveesneotek.ru",
+    "/RF/ЦентрИнформ/АО ЦентрИнформ-Photoroom.png": "https://center-inform.ru",
     "/RF/Спейс Тревел/logo_rebrand.svg": "https://space-travel.ru",
-    "/International/IDEA/2.png": "https://idea.int",
+    "/International/IDEA/2.png": "https://globaldigitalmajority.com",
     "/RF/Лузалес/logo1.png.webp": "https://luzales.ru",
     "/RF/Код безопасности/Логотип_компании_Код_Безопасности_.svg.png":
-      "https://kb.ru",
+      "https://www.securitycode.ru",
     "/RF/Деловая Азия/Деловая азия - лого - ru.svg": "https://delasia.ru",
     "/International/Inyaland/InyaLand _ Accelerating technology innovations in Myanmar.avif":
-      "https://inyaland.com",
-    "/RF/Астра/logoGroupAstra/Astra-g-color_white.svg":
-      "https://astra-group.ru",
-    "/RF/Аквариус/Logo Eng/Logo_AQ-white.png": "https://aquarius.ru",
-    "/RF/RDW Computers/2023-05-16-2mqsr4-RDW-Logo-CMYK.png": "https://rdw.ru",
+      "https://www.inyaland.com",
+    "/RF/Астра/logoGroupAstra/Astra-g-color_white.svg": "https://astra.ru",
+    "/RF/Аквариус/Logo Eng/Logo_AQ-white.png": "https://www.aq.ru",
+    "/RF/RDW Computers/2023-05-16-2mqsr4-RDW-Logo-CMYK.png":
+      "https://rdwcomp.ru",
     "/International/7th Computing/o9SXyF4kPWv_4nhtaCnNLF7UNW_ctaPmkL2rgynHdD1Z9500tJx02HGcQLDVJDgWQqKfoVKXOwo=.png":
-      "https://7thcomputing.com",
+      "https://www.7thcomputing.com",
     "/International/MDEA/409837576_754309663382003_7232258249357238228_n-Photoroom.png":
-      "https://mdea.org",
+      "https://www.mdea.org.mm",
   };
 
   const partnersLogos = [
