@@ -237,7 +237,7 @@ export const translations = {
       learnMore: "Learn more",
       contact: "Contact us",
       aboutText:
-        "«Garuda Solution» is your reliable international trade partner. Consulting, analytics and business support for successful entry into global markets",
+        "Garuda Solution is a reliable partner in international economic affairs. Consulting, analytics, and business support for successful entry into global markets",
       competencies: "Our competencies",
       competenciesList: [
         "Market access",
@@ -258,7 +258,7 @@ export const translations = {
         export: {
           title: "Export and import",
           description:
-            "We provide full support for export and import transactions of food, agricultural and other industry products",
+            "We provide end-to-end support for export and import transactions of food, agricultural, and other industrial products",
         },
         it: {
           title: "IT projects",
@@ -322,10 +322,10 @@ export const translations = {
         exportImport: {
           title: "Export/Import",
           description:
-            "We provide full support for transactions of food, agricultural and other industry products",
+            "We provide end-to-end support for export and import transactions of food, agricultural, and other industrial products",
         },
         businessMissions: {
-          title: "Business missions and  other individual solutions",
+          title: "Business missions and other individual solutions",
           description:
             "Representative economic and industry forums with the participation of market leaders in the field of ICT, cybersecurity, trade and industry. The company acts as a partner of international economic forums and participates in the activities of Intergovernmental Commissions",
         },
@@ -408,7 +408,7 @@ export const translations = {
               "Conducting business missions (partner selection, MICE, negotiations)",
             item2:
               "Participation and organization of forums, exhibitions, industry conferences",
-            item3: "Assistance in establishing B2B and B2C contacts",
+            item3: "Assistance in establishing B2B and B2G contacts",
           },
           list2: {
             item1: "Promotion of high-tech solutions",
