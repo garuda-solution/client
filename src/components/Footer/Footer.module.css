@@ -1,0 +1,312 @@
+.footer {
+    /* background: linear-gradient(180deg, #6e90a9 0%, #122b3d 100%); */
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.topSection {
+    padding: 60px 20px;
+    /* background: #7092ab; */
+}
+
+.dividerWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.divider {
+    height: 1px;
+    width: 90%;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 41px 31px;
+    gap: 40px;
+    background:
+        linear-gradient(rgb(0 0 0 / 10%), rgb(0 0 0 / 40%)), url(/map.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.contactInfo h3,
+.contactValue,
+.contactForm h3,
+.contactForm input,
+.contactForm input::placeholder,
+.privacy {
+    position: relative;
+    z-index: 2;
+}
+
+.contactForm {
+    background: rgba(97, 127, 150, 0.9);
+    /* Добавляем прозрачность */
+    position: relative;
+    z-index: 2;
+}
+
+.contactInfo {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contactInfo h3 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.contactBlock:first-of-type {
+    margin-bottom: 15px;
+}
+
+.contactLabel {
+    display: block;
+    font-size: 15px;
+    color: #BCBCBC;
+}
+
+.contactValue {
+    font-size: 24px;
+    color: white;
+    margin: 0;
+}
+
+.contactForm {
+    background: #617F96;
+    width: 100%;
+    max-width: 539px;
+    border-radius: 10px;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.contactForm h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: white;
+}
+
+.contactForm form {
+    display: grid;
+    gap: 16px;
+    width: 100%;
+}
+
+.contactForm input {
+    padding: 12px 0;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #fff;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    border-radius: 0;
+}
+
+.contactForm input::placeholder {
+    color: #89A8C0;
+}
+
+.contactForm button {
+    background-color: white;
+    color: #617F96;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.contactForm button:hover {
+    background-color: #486982;
+    color: white;
+}
+
+.privacy {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 16px;
+    text-align: center;
+    color: white;
+}
+
+/* Нижняя секция */
+.bottomSection {
+    /* background: #1d3d53; */
+    padding: 30px 0;
+}
+
+.bottomContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.logoColumn {
+    flex: 1;
+    min-width: 150px;
+}
+
+.logo {
+    height: 153px;
+    width: auto;
+}
+
+.documentsColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    min-width: 200px;
+    height: 100%;
+}
+
+.documentLink {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.3s;
+    text-align: center;
+}
+
+.documentLink:hover {
+    opacity: 0.8;
+}
+
+.navColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 150px;
+}
+
+.navLink {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.3s;
+    text-align: right;
+}
+
+.navLink:hover {
+    opacity: 0.8;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .contactInfo h3 {
+        font-size: 28px;
+    }
+
+    .contactForm {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .topSection {
+        padding: 40px 0;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 41px 10px;
+    }
+
+    .contactInfo,
+    .contactForm {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .bottomContainer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .documentsColumn {
+        order: 1;
+    }
+
+    .navColumn {
+        order: 2;
+        align-items: center;
+    }
+
+    .logoColumn {
+        order: 3;
+        margin-top: 20px;
+    }
+
+    .navLink {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactInfo h3 {
+        font-size: 24px;
+    }
+
+    .contactForm h3 {
+        font-size: 20px;
+    }
+
+    .contactForm {
+        padding: 20px;
+        width: 100%;
+    }
+}
+
+/* Добавьте эти стили в конец файла */
+.successMessage {
+    color: #4BB543;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.errorMessage {
+    color: #ff3333;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

@@ -1,0 +1,440 @@
+.container {
+    padding: 0 8rem 2rem;
+    color: white;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+/* Page Header */
+.pageHeader {
+    padding: 115px 0 320px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.companyName {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 96px;
+    font-weight: 600;
+    line-height: 106%;
+    letter-spacing: 3px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.pageTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+    padding: 2px 37px;
+    border: 1px solid #1F3649;
+    border-radius: 7px;
+    display: inline-block;
+}
+
+/* Section Titles */
+.sectionTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 52px;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+/* Key Services Section */
+.servicesSection {
+    margin-bottom: 6rem;
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+}
+
+.serviceCard {
+    background: #18191E;
+    padding: 2rem;
+    border: 1px solid #E0DCD9;
+    border-radius: 16px;
+    transition: transform 0.3s;
+    text-align: left;
+    position: relative;
+    height: 245px;
+    display: flex;
+    flex-direction: column;
+}
+
+.serviceCard:hover {
+    transform: translateY(-5px);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.cardHeader h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    font-size: 1.5rem;
+    max-width: 80%;
+    font-weight: bold;
+}
+
+.cardNumber {
+    font-size: 24px;
+    color: #617F96;
+    opacity: 0.7;
+}
+
+.serviceCard p {
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Cooperation Directions Section */
+.cooperationSection {
+    margin-bottom: 6rem;
+}
+
+.cooperationContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.cooperationBlock {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.cooperationText {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.cooperationText>div {
+    max-width: 515px;
+}
+
+.cooperationImage {
+    flex: 1;
+    max-width: 510px;
+}
+
+.phaseContainer {
+    position: relative;
+    padding-left: 30px;
+}
+
+.phaseContainer::before {
+    content: "";
+    position: absolute;
+    left: 35px;
+    top: 16px;
+    width: 30px;
+    height: 1px;
+    background-color: #89A8C0;
+}
+
+.phase {
+    display: block;
+    font-size: 20px;
+    color: #89A8C0;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-left: 50px;
+}
+
+.cooperationText h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.cooperationText p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.roundedImage {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    transition: transform 0.3s;
+}
+
+.roundedImage:hover {
+    transform: scale(1.02);
+}
+
+.textFirst {
+    flex-direction: row;
+}
+
+.imageFirst {
+    flex-direction: row-reverse;
+}
+
+/* Specialization Section */
+.specializationSection {
+    margin-bottom: 6rem;
+}
+
+.specializationWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.specializationGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 1172px;
+}
+
+.specializationRow {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.specializationRow:last-child {
+    justify-content: flex-start;
+}
+
+.specializationItem {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    height: 318px;
+    width: 380px;
+}
+
+.videoWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.specializationVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.specializationItem:hover .specializationVideo {
+    transform: scale(1.05);
+}
+
+.specializationTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+/* Responsive Styles */
+@media (max-width: 1440px) {
+    .container {
+        padding: 0 4rem 2rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .pageHeader {
+        padding: 60px 0 240px;
+    }
+
+    .companyName {
+        font-size: 52px;
+    }
+
+    .pageTitle {
+        font-size: 20px;
+        padding: 6px 30px;
+    }
+
+    .sectionTitle {
+        font-size: 42px;
+    }
+
+    .cooperationText h3 {
+        font-size: 36px;
+    }
+
+    .cooperationText p {
+        font-size: 20px;
+    }
+
+    .specializationItem {
+        height: 280px;
+        width: 340px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .servicesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .phaseContainer::before {
+        display: none;
+    }
+
+    .phaseContainer {
+        padding-left: 0;
+    }
+
+    .phase {
+        padding-left: 0;
+    }
+
+    .serviceCard {
+        grid-column: span 1 !important;
+        height: auto;
+    }
+
+    .cooperationBlock {
+        flex-direction: column;
+    }
+
+    .textFirst,
+    .imageFirst {
+        flex-direction: column;
+    }
+
+    .cooperationText {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cooperationText>div {
+        max-width: 100%;
+    }
+
+    .cooperationImage {
+        max-width: 100%;
+    }
+
+    .specializationRow {
+        justify-content: center !important;
+    }
+
+    .specializationItem {
+        height: 250px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 2rem 2rem;
+        margin-top: 80px;
+    }
+
+    .pageHeader {
+        padding: 40px 0 160px;
+    }
+
+    .companyName {
+        font-size: 42px;
+    }
+
+    .pageTitle {
+        font-size: 18px;
+        padding: 5px 25px;
+    }
+
+    .sectionTitle {
+        font-size: 36px;
+        margin-bottom: 2rem;
+        line-height: 2rem;
+    }
+
+    .specializationGrid {
+        gap: 0.5rem;
+    }
+
+    .specializationItem {
+        height: 200px;
+        width: calc(50% - 0.5rem);
+    }
+
+    .cooperationText h3 {
+        font-size: 28px;
+        line-height: 2rem;
+    }
+
+    .cooperationText p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem 2rem;
+    }
+
+    .pageHeader {
+        padding: 30px 0 120px;
+    }
+
+    .companyName {
+        font-size: 32px;
+    }
+
+    .pageTitle {
+        font-size: 16px;
+        padding: 4px 20px;
+    }
+
+    .sectionTitle {
+        font-size: 28px;
+    }
+
+    .serviceCard {
+        padding: 1.5rem;
+    }
+
+    .cardHeader h3 {
+        font-size: 1.3rem;
+    }
+
+    .specializationItem {
+        height: 180px;
+        width: calc(50% - 0.5rem);
+    }
+
+    .specializationTitle {
+        font-size: 1.5rem;
+    }
+}

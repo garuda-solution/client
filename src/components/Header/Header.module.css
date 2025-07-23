@@ -1,0 +1,508 @@
+.header {
+    position: static;
+    width: 100%;
+    background: none;
+    z-index: 1000;
+    height: 140px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem 8rem;
+    padding-left: 4rem;
+    height: 100%;
+}
+
+.logo {
+    flex: 0 0 auto;
+}
+
+.logoImage {
+    height: 145px;
+    width: auto;
+    transition: height 0.3s ease;
+}
+
+nav {
+    padding: 10px 25px;
+    border-radius: 80px;
+    background: linear-gradient(90deg, #0D0E12 0%, #00202A 100%);
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.4s;
+    font-size: 16px;
+}
+
+.nav a:hover {
+    color: #0a4557;
+}
+
+.clockContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.clock {
+    width: 20px;
+    height: 20px;
+}
+
+.rightHeaderContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.currency {
+    display: flex;
+    gap: 4px;
+    font-size: 0.9rem;
+    color: #555;
+    flex-direction: column;
+}
+
+.currencyItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.flag {
+    width: 16px;
+    height: 12px;
+}
+
+.currency span {
+    color: #fff;
+    font-family: PT Root UI;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 115.99999999999999%;
+    letter-spacing: 0;
+}
+
+.time {
+    font-family: PT Root UI;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: right;
+    color: #fff;
+}
+
+.burgerButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+    position: relative;
+}
+
+.burgerLine {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+.burgerLine:first-child {
+    width: 80%;
+    align-self: flex-end;
+}
+
+.burgerButton.open .burgerLine:first-child {
+    transform: translateY(10px) rotate(45deg);
+    width: 100%;
+}
+
+.burgerButton.open .burgerLine:last-child {
+    transform: translateY(-10px) rotate(-45deg);
+    width: 100%;
+}
+
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobileMenu.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobileMenuContent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    max-width: 400px;
+    height: 100%;
+    background: #0D0E12;
+    padding: 100px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mobileMenu.open .mobileMenuContent {
+    transform: translateX(0);
+}
+
+.mobileNav {
+    border-radius: 16px;
+}
+
+.mobileNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.mobileNav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.mobileNav a:hover {
+    color: #0066cc;
+}
+
+.mobileInfo {
+    margin-top: auto;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileClock {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 24px;
+}
+
+.mobileCurrency {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mobileCurrency .currencyItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.mobileCurrency img {
+    width: 20px;
+    height: 15px;
+}
+
+@media (max-width: 1440px) {
+    .container {
+        padding: 1rem 5rem;
+    }
+
+    .logoImage {
+        height: 140px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 1rem 4rem;
+    }
+
+    .logoImage {
+        height: 135px;
+    }
+}
+
+@media (max-width: 1204px) {
+    .container {
+        padding: 1rem 2rem;
+    }
+
+    .nav,
+    .rightHeaderContainer {
+        display: none;
+    }
+
+    .logoImage {
+        height: 130px;
+    }
+}
+
+@media (min-width: 1204px) {
+    .burgerButton {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 100px;
+    }
+
+    .logoImage {
+        height: 125px;
+    }
+
+    .mobileMenuContent {
+        width: 90%;
+        padding: 80px 20px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .mobileNav a {
+        font-size: 18px;
+    }
+
+    .mobileClock {
+        font-size: 20px;
+    }
+
+    .logoImage {
+        height: 100px;
+    }
+}
+
+
+.languageButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 12px;
+    transition: background-color 0.3s;
+}
+
+.languageButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.languageFlag {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.languageDropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #18191E;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 5px 0;
+    z-index: 1000;
+    min-width: 100px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.languageOption {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+.languageOption:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.languageOption.active {
+    background-color: rgba(97, 127, 150, 0.3);
+}
+
+.mobileLanguageSwitcher {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.mobileLanguageButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+
+.languageSwitcher {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-right: 20px;
+    position: absolute;
+    right: 15px;
+}
+
+.languageButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.languageButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.languageButton.active {
+    background-color: rgba(97, 127, 150, 0.3);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.languageFlag {
+    width: 24px;
+    height: 18px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.mobileLanguageSwitcher {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.mobileLanguageSwitcher .languageButton {
+    padding: 8px;
+}
+
+.mobileLanguageSwitcher .languageFlag {
+    width: 28px;
+    height: 21px;
+}
+
+@media (max-width: 1440px) {
+    .languageSwitcher {
+        margin-right: 0;
+    }
+}
+
+.mobileTopRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.languageSwitcher.mobile {
+    display: flex;
+    gap: 10px;
+    margin: 0;
+}
+
+.languageSwitcher.mobile .languageButton {
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.languageSwitcher.mobile .languageButton.active {
+    background: rgba(97, 127, 150, 0.5);
+}
+
+.languageSwitcher.mobile .languageFlag {
+    width: 20px;
+    height: 15px;
+}
+
+.languageSwitcher.mobile .languageButton span {
+    font-size: 14px;
+    color: white;
+}
+
+@media (max-width: 480px) {
+    .mobileTopRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .languageSwitcher.mobile {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
