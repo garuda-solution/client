@@ -1,8 +1,9 @@
 import styles from "./HomePage.module.css";
 import { useTranslation } from "../../i18n";
 import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNews } from "../../context/NewsContext";
+import Icon from "../../components/Icon/Icon";
 
 export const handleScrollToContacts = () => {
   document.getElementById("contact-section")?.scrollIntoView({
@@ -15,6 +16,21 @@ const HomePage = () => {
   const navigate = useNavigate();
   const { news, loading, error } = useNews();
   const [expandedNews, setExpandedNews] = useState({});
+  const newsContainerRef = useRef(null);
+
+  const scrollNews = (direction) => {
+    const container = newsContainerRef.current;
+    if (container) {
+      const scrollAmount = direction === "left" ? -600 : 600;
+      container.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollNewsLeft = () => scrollNews("left");
+  const scrollNewsRight = () => scrollNews("right");
 
   const partnersLinks = {
     "/RF/Т8/t8-1.png": "https://t8.ru",
@@ -278,14 +294,13 @@ const HomePage = () => {
   }, [currentSlide, allSlides.length]);
 
   const isMobile = window.innerWidth <= 768;
-  const newsData = (isMobile ? news.allFilteredNews : news.desktopNews)?.map(
-    (item, index) => ({
-      id: index + 1,
-      title: item.title,
-      img: item.image || fallbackImages[index % fallbackImages.length],
-      description: item.description || t("home.newsItems.defaultDescription"),
-    })
-  );
+  const newsData = news.allFilteredNews?.map((item, index) => ({
+    id: index + 1,
+    title: item.title,
+    img: item.image || fallbackImages[index % fallbackImages.length],
+    description: item.description || t("home.newsItems.defaultDescription"),
+    url: item.url,
+  }));
 
   const toggleNewsExpansion = (id) => {
     setExpandedNews((prev) => ({
@@ -490,32 +505,57 @@ const HomePage = () => {
 
       <section className={styles.newsSection}>
         <h2 className={styles.sectionTitle}>{t("home.news")}</h2>
-        <div className={styles.newsContainer}>
-          {newsData?.map((news) => (
-            <div key={news.id} className={styles.newsCard}>
-              <div
-                className={styles.newsImage}
-                style={{ backgroundImage: `url(${news.img})` }}
-                role="img"
-                aria-label={news.title}
-              ></div>
-              <div
-                className={`${styles.newsContent} ${
-                  expandedNews[news.id] ? styles.expanded : ""
-                }`}
-              >
-                <p className={styles.newsDescription}>{news.description}</p>
-                <span
-                  className={styles.readButton}
-                  onClick={() => toggleNewsExpansion(news.id)}
+        <div className={styles.newsWrapper}>
+          <button
+            className={`${styles.controlButton} ${styles.leftControl}`}
+            onClick={(e) => {
+              scrollNewsLeft();
+              e.currentTarget.blur();
+            }}
+            aria-label="Previous news"
+            onMouseLeave={(e) => e.currentTarget.blur()}
+          >
+            <Icon variant="arrow-left-short" color="#fff" />
+          </button>
+
+          <div className={styles.newsContainer} ref={newsContainerRef}>
+            {newsData?.map((news) => (
+              <div key={news.id} className={styles.newsCard}>
+                <div
+                  className={styles.newsImage}
+                  style={{ backgroundImage: `url(${news.img})` }}
+                  role="img"
+                  aria-label={news.title}
+                ></div>
+                <div
+                  className={`${styles.newsContent} ${
+                    expandedNews[news.id] ? styles.expanded : ""
+                  }`}
                 >
-                  {expandedNews[news.id]
-                    ? t("home.readLess")
-                    : t("home.readMore")}
-                </span>
+                  <p className={styles.newsDescription}>{news.description}</p>
+                  <Link
+                    className={styles.readButton}
+                    to={news.url}
+                    target="_blank"
+                  >
+                    {t("home.readMore")}
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <button
+            className={`${styles.controlButton} ${styles.rightControl}`}
+            onClick={(e) => {
+              scrollNewsRight();
+              e.currentTarget.blur();
+            }}
+            aria-label="Next news"
+            onMouseLeave={(e) => e.currentTarget.blur()}
+          >
+            <Icon variant="arrow-right-short" color="#fff" />
+          </button>
         </div>
       </section>
     </div>
