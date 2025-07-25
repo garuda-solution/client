@@ -31,6 +31,7 @@ export const NewsProvider = ({ children }) => {
         params: { limit: 40, language },
       });
       const processedNews = filterAndLimitNews(response.data);
+      console.log(processedNews)
 
       setNews(processedNews);
       setError(null);
