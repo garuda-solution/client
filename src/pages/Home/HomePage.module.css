@@ -416,19 +416,113 @@
     scale: 1.1;
 }
 
-.newsSection {
-    padding: 4rem 0;
-}
-
 .newsContainer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 2rem;
     overflow-x: auto;
     padding: 1rem 2rem;
     max-width: 1680px;
     margin: 0 auto;
     scrollbar-width: none;
+    position: relative;
+}
+
+.newsSection {
+    padding: 4rem 0;
+    position: relative;
+}
+
+.newsWrapper {
+  position: relative;
+  max-width: 1680px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.controlButton {
+  background: rgba(97, 127, 150, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+}
+
+.leftControl {
+  left: 0;
+}
+
+.rightControl {
+  right: 0;
+}
+
+.newsWrapper:hover .controlButton {
+  opacity: 1;
+}
+
+.controlButton:hover {
+  background: rgba(97, 127, 150, 1);
+  transform: scale(1.1);
+}
+
+.newsContainer {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem 2rem;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.newsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.controlButton {
+    background: rgba(97, 127, 150, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    opacity: 0;
+}
+
+.newsWrapper:hover .controlButton,
+.controlButton:focus {
+    opacity: 1;
+}
+
+.controlButton:hover {
+    background: rgba(97, 127, 150, 1);
+    transform: scale(1.1);
 }
 
 .newsContainer::-webkit-scrollbar {
@@ -634,6 +728,17 @@
         width: 140px;
         height: 80px;
     }
+}
+
+
+@media (max-width: 768px) {
+  .controlButton {
+    display: none;
+  }
+  
+  .newsContainer {
+    padding: 1rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1432,7 +1537,16 @@
     }
 }
 
-/* Для очень маленьких экранов */
+@media (max-width: 768px) {
+    .controls {
+        display: none;
+    }
+    
+    .newsContainer {
+        padding: 1rem;
+    }
+}
+
 @media (max-width: 480px) {
     .trustCarousel {
         height: 550px;
