@@ -458,6 +458,8 @@ const HomePage = () => {
       <section className={styles.trustSection}>
         <h2 className={styles.sectionTitle}>{t("home.trustUs")}</h2>
         <div className={styles.trustCarousel}>
+          <div className={styles.fadeOverlayLeft}></div>
+          <div className={styles.fadeOverlayRight}></div>
           <div className={styles.slidesContainer}>
             {allSlides.map((slide, index) => {
               const slideClass =
