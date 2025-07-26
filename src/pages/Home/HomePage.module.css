@@ -1346,10 +1346,44 @@
 }
 
 .trustCarousel {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 480px;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 500px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* border: 1px solid rgba(255, 255, 255, 0.01); */
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  overflow: hidden;
+}
+
+.fadeOverlayLeft,
+.fadeOverlayRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.fadeOverlayLeft {
+  left: 0;
+  background: linear-gradient(90deg, rgb(6 7 10 / 96%) 0%, rgba(10, 12, 16, 0) 100%);
+}
+
+.fadeOverlayRight {
+  right: 0;
+  background: linear-gradient(270deg, rgb(6 28 35) 0%, rgba(10, 12, 16, 0) 100%);
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+  .fadeOverlayLeft,
+  .fadeOverlayRight {
+    width: 60px;
+  }
 }
 
 .slidesContainer {
@@ -1485,9 +1519,12 @@
 .trustLogo img {
     max-width: 100%;
     max-height: 100%;
+    width: var(--logo-width, 180px);
+    height: var(--logo-height, 60px);
     object-fit: contain;
-    opacity: 0.85;
+    opacity: 0.95;
     transition: all 0.3s;
+    /* filter: brightness(0) invert(1); */
 }
 
 .trustLogo:hover img {
