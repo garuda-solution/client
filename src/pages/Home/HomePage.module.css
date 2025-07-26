@@ -434,44 +434,44 @@
 }
 
 .newsWrapper {
-  position: relative;
-  max-width: 1680px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
+    position: relative;
+    max-width: 1680px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .controlButton {
-  background: rgba(97, 127, 150, 0.7);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: absolute;
-  z-index: 2;
-  opacity: 0;
+    background: rgba(97, 127, 150, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
 }
 
 .leftControl {
-  left: 0;
+    left: 0;
 }
 
 .rightControl {
-  right: 0;
+    right: 0;
 }
 
 .newsWrapper:hover .controlButton {
-  opacity: 1;
+    opacity: 1;
 }
 
 .controlButton:hover {
-  background: rgba(97, 127, 150, 1);
-  transform: scale(1.1);
+    background: rgba(97, 127, 150, 1);
+    transform: scale(1.1);
 }
 
 .newsContainer {
@@ -732,13 +732,13 @@
 
 
 @media (max-width: 768px) {
-  .controlButton {
-    display: none;
-  }
-  
-  .newsContainer {
-    padding: 1rem;
-  }
+    .controlButton {
+        display: none;
+    }
+
+    .newsContainer {
+        padding: 1rem;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1346,44 +1346,45 @@
 }
 
 .trustCarousel {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  min-height: 480px;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  /* border: 1px solid rgba(255, 255, 255, 0.01); */
-  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
-  overflow: hidden; /* Важно для работы overlay */
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 500px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* border: 1px solid rgba(255, 255, 255, 0.01); */
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
 }
 
 .fadeOverlayLeft,
 .fadeOverlayRight {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 150px;
-  z-index: 10;
-  pointer-events: none; /* Чтобы клики проходили сквозь overlay */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .fadeOverlayLeft {
-  left: 0;
-  background: linear-gradient(90deg, rgb(6 7 10 / 96%) 0%, rgba(10, 12, 16, 0) 100%);
+    left: 0;
+    background: linear-gradient(90deg, rgb(6 7 10 / 96%) 0%, rgba(10, 12, 16, 0) 100%);
 }
 
 .fadeOverlayRight {
-  right: 0;
-  background: linear-gradient(270deg, rgb(6 28 35) 0%, rgba(10, 12, 16, 0) 100%);
+    right: 0;
+    background: linear-gradient(270deg, rgb(6 28 35) 0%, rgba(10, 12, 16, 0) 100%);
 }
 
 /* Адаптивные стили для мобильных устройств */
 @media (max-width: 768px) {
-  .fadeOverlayLeft,
-  .fadeOverlayRight {
-    width: 60px;
-  }
+
+    .fadeOverlayLeft,
+    .fadeOverlayRight {
+        width: 60px;
+    }
 }
 
 .slidesContainer {
@@ -1519,9 +1520,12 @@
 .trustLogo img {
     max-width: 100%;
     max-height: 100%;
+    width: var(--logo-width, 180px);
+    height: var(--logo-height, 60px);
     object-fit: contain;
-    opacity: 0.85;
+    opacity: 0.95;
     transition: all 0.3s;
+    /* filter: brightness(0) invert(1); */
 }
 
 .trustLogo:hover img {
@@ -1575,7 +1579,7 @@
     .controls {
         display: none;
     }
-    
+
     .newsContainer {
         padding: 1rem;
     }
