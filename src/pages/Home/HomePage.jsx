@@ -72,6 +72,73 @@ const HomePage = () => {
     "/International/MOTC LOGO NEW-Photoroom.png": "https://www.motc.gov.mm",
   };
 
+  const logoStyles = {
+    "/RF/Т8/t8-1.png": { width: 270, height: 90, autoScale: true },
+    "/RF/Элвис-НеоТек/logo_102x.png": {
+      width: 270,
+      height: 120,
+      autoScale: true,
+    },
+    "/RF/ЦентрИнформ/АО ЦентрИнформ-Photoroom.png": { width: 180, height: 90 },
+    "/RF/Спейс Тревел/logo_rebrand.svg": { width: 180, height: 60 },
+    "/International/IDEA/2.png": { width: 360, height: 135, autoScale: true },
+    "/RF/Лузалес/logo1.png.webp": { width: 270, height: 120, autoScale: true },
+    "/RF/Код безопасности/Логотип_компании_Код_Безопасности_.svg.png": {
+      width: 180,
+      height: 60,
+    },
+    "/RF/Деловая Азия/Деловая азия - лого - ru.svg": { width: 270, height: 90 },
+    "/International/Inyaland/InyaLand _ Accelerating technology innovations in Myanmar.avif":
+      { width: 180, height: 70 },
+    "/RF/Астра/logoGroupAstra/Astra-g-color_white.svg": {
+      width: 270,
+      height: 90,
+      autoScale: true,
+    },
+    "/RF/Аквариус/Logo Eng/Logo_AQ-white.png": { width: 270, height: 90 },
+    "/RF/RDW Computers/2023-05-16-2mqsr4-RDW-Logo-CMYK.png": {
+      width: 270,
+      height: 90,
+    },
+    "/International/7th Computing/o9SXyF4kPWv_4nhtaCnNLF7UNW_ctaPmkL2rgynHdD1Z9500tJx02HGcQLDVJDgWQqKfoVKXOwo=.png":
+      { width: 270, height: 90 },
+    "/International/MDEA/409837576_754309663382003_7232258249357238228_n-Photoroom.png":
+      { width: 270, height: 90 },
+    "/International/Mytel/The_Mytel_Logo-Photoroom.png": {
+      width: 270,
+      height: 90,
+    },
+    "/International/Ponontle Business Solutions/PONONTLE-GROUP.png": {
+      width: 270,
+      height: 90,
+    },
+    "/International/UAB/UAB-New-Logo-.-e1736415840696-Photoroom.png": {
+      width: 270,
+      height: 90,
+    },
+    "/International/Ассоциация дружбы/logo.png": { width: 270, height: 90 },
+    "/International/МИФЕР/MIFER_Logo-Photoroom.png": { width: 270, height: 90 },
+    "/International/UMFCCI/umfcci-logo.png": { width: 270, height: 90 },
+    "/International/Минфин Мьянмы/MOPF 2 line s copy (1)_0.png": {
+      width: 270,
+      height: 90,
+      autoScale: true,
+    },
+    "/International/Минтуризм Мьянмы/Logo_of_the_Ministry_of_Hotels_&_Tourism_(Burma).svg.png":
+      { width: 270, height: 90, autoScale: true },
+    "/International/Минторг Мьянмы/commerce_logo_sep (1).png": {
+      width: 270,
+      height: 90,
+      autoScale: true,
+    },
+    "/International/Минпром Мьянмы/MOPFI_Logo.png": {
+      width: 270,
+      height: 90,
+      autoScale: true,
+    },
+    "/International/MOTC LOGO NEW-Photoroom.png": { width: 270, height: 90 },
+  };
+
   const partnersLogos = [
     [
       "/RF/Т8/t8-1.png",
@@ -482,20 +549,40 @@ const HomePage = () => {
                         rowIndex === 1 ? styles.centerRow : ""
                       }`}
                     >
-                      {row.map((logo, logoIndex) => (
-                        <Link
-                          target="_blank"
-                          to={partnersLinks[logo] || "#"}
-                          key={logoIndex}
-                          className={styles.trustLogo}
-                        >
-                          <img
-                            src={`/partners/logos${logo}`}
-                            alt={`Partner logo`}
-                            loading="lazy"
-                          />
-                        </Link>
-                      ))}
+                      {row.map((logo, logoIndex) => {
+                        const style = logoStyles[logo] || {
+                          width: 180,
+                          height: 60,
+                        };
+                        return (
+                          <Link
+                            target="_blank"
+                            to={partnersLinks[logo] || "#"}
+                            key={logoIndex}
+                            className={styles.trustLogo}
+                            style={{
+                              "--logo-width": `${style.width}px`,
+                              "--logo-height": `${style.height}px`,
+                            }}
+                          >
+                            <img
+                              src={`/partners/logos${logo}`}
+                              alt={`Partner logo`}
+                              loading="lazy"
+                              style={{
+                                width: `${style.width}px`,
+                                height: style.autoScale
+                                  ? "auto"
+                                  : `${style.height}px`,
+                                maxHeight: `${style.height}px`,
+                                objectFit: style.autoScale
+                                  ? "scale-down"
+                                  : "contain",
+                              }}
+                            />
+                          </Link>
+                        );
+                      })}
                     </div>
                   ))}
                 </div>
