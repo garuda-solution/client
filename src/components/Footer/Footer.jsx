@@ -26,6 +26,13 @@ const Footer = () => {
     }));
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -194,16 +201,32 @@ const Footer = () => {
           </div>
 
           <div className={styles.navColumn}>
-            <NavLink to="/about" className={styles.navLink}>
+            <NavLink
+              to="/about"
+              className={styles.navLink}
+              onClick={scrollToTop}
+            >
               {t("header.navAbout")}
             </NavLink>
-            <NavLink to="/activity" className={styles.navLink}>
+            <NavLink
+              to="/activity"
+              className={styles.navLink}
+              onClick={scrollToTop}
+            >
               {t("header.navActivity")}
             </NavLink>
-            <NavLink to="/cooperation" className={styles.navLink}>
+            <NavLink
+              to="/cooperation"
+              className={styles.navLink}
+              onClick={scrollToTop}
+            >
               {t("header.navCooperation")}
             </NavLink>
-            <NavLink to="/contacts" className={styles.navLink}>
+            <NavLink
+              to="/contacts"
+              className={styles.navLink}
+              onClick={scrollToTop}
+            >
               {t("header.navContacts")}
             </NavLink>
           </div>
