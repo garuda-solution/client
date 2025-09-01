@@ -351,15 +351,6 @@ const HomePage = () => {
     return () => clearInterval(interval);
   }, [allSlides.length]);
 
-  useEffect(() => {
-    console.log(
-      "Current slide:",
-      currentSlide,
-      "Total slides:",
-      allSlides.length
-    );
-  }, [currentSlide, allSlides.length]);
-
   const isMobile = window.innerWidth <= 768;
   const newsData = news.allFilteredNews?.map((item, index) => ({
     id: index + 1,
